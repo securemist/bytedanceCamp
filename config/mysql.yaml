@@ -1,0 +1,10 @@
+log:
+  level: "debug"
+  path: "logs/douyin.log"
+
+mysql:
+  host: "127.0.0.1"
+  port: 3306
+  username: "root"
+  password: "chg123456"
+  dbName: "camp"
