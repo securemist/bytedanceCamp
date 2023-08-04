@@ -3,7 +3,7 @@ syntax = "proto3";
 option go_package = ".;douyin_core";
 package douyin.core;
 service User{
-  rpc CreateUser(UserRegisterRequest)returns(UserLoginResponse);  // 创建新用户
+  rpc CreateUser(UserRegisterRequest)returns(UserRegisterResponse);  // 创建新用户
   rpc LoginCheck(UserLoginRequest)returns(UserLoginResponse);     // 登录
 }
 

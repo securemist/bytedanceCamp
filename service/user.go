@@ -14,12 +14,12 @@ import (
 	"bytedanceCamp/web/middlewares"
 	"context"
 	"crypto/sha512"
-	"fmt"
 	"github.com/anaskhan96/go-password-encoder"
 	"github.com/golang-jwt/jwt/v5"
 	"go.uber.org/zap"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
+	"strings"
 	"time"
 )
 
@@ -35,7 +35,7 @@ type UserServer struct {
 	4. 生成一个jwt token用以鉴权
 	5. 保存到数据库中
 */
-func (u *UserServer) CreateUser(ctx context.Context, req *douyin_core.UserRegisterRequest) (*douyin_core.UserLoginResponse, error) {
+func (u *UserServer) CreateUser(ctx context.Context, req *douyin_core.UserRegisterRequest) (*douyin_core.UserRegisterResponse, error) {
 	user := model.User{}
 	// 1. 查询用户是否存在
 	result := dao.GetDB().Where(model.User{UserName: req.Username}).First(&user)
@@ -45,9 +45,7 @@ func (u *UserServer) CreateUser(ctx context.Context, req *douyin_core.UserRegist
 	user.UserName = req.Username
 	user.Password = req.Password
 	// 2. 密码加密
-	options := &password.Options{SaltLen: 16, Iterations: 100, KeyLen: 32, HashFunction: sha512.New}
-	salt, encodedPwd := password.Encode(req.Password, options)
-	user.Password = fmt.Sprintf("$pbkdf2-sha512$%s$%s", salt, encodedPwd)
+	user.Password = util.EncodePassword(req.Password)
 	// 3. 生成uuid
 	user.Uuid = util.GenID()
 	// 4. 生成jwt token
@@ -71,10 +69,34 @@ func (u *UserServer) CreateUser(ctx context.Context, req *douyin_core.UserRegist
 	if result.RowsAffected == 0 {
 		return nil, status.Errorf(codes.Internal, result.Error.Error())
 	}
-	response := &douyin_core.UserLoginResponse{
+	response := &douyin_core.UserRegisterResponse{
 		StatusCode: 0,
 		UserId:     user.Uuid,
 		Token:      user.JwtToken,
 	}
 	return response, nil
+}
+
+// LoginCheck 用户登录
+func (u *UserServer) LoginCheck(ctx context.Context, req *douyin_core.UserLoginRequest) (*douyin_core.UserLoginResponse, error) {
+	user := model.User{}
+	result := dao.GetDB().Where(model.User{UserName: req.Username}).First(&user)
+	if result.RowsAffected == 0 {
+		zap.S().Errorf("%s用户不存在", req.Username)
+		return nil, status.Errorf(codes.Internal, "%s用户不存在", req.Username)
+	}
+	// 验证密码是否正确
+	options := &password.Options{SaltLen: 16, Iterations: 100, KeyLen: 32, HashFunction: sha512.New}
+	passwordInfo := strings.Split(user.Password, "$")
+	check := password.Verify(req.Password, passwordInfo[2], passwordInfo[3], options)
+	if check == false {
+		zap.S().Errorf("密码错误,请重试")
+		return nil, status.Errorf(codes.InvalidArgument, "密码错误,请重试")
+	}
+	response := douyin_core.UserLoginResponse{
+		StatusCode: 0,
+		UserId:     user.Uuid,
+		Token:      user.JwtToken,
+	}
+	return &response, nil
 }

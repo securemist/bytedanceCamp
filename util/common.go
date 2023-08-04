@@ -7,6 +7,9 @@
 package util
 
 import (
+	"crypto/sha512"
+	"fmt"
+	"github.com/anaskhan96/go-password-encoder"
 	"gorm.io/gorm"
 	"net"
 )
@@ -41,4 +44,12 @@ func Paginate(page, pageSize int) func(db *gorm.DB) *gorm.DB {
 		offset := (page - 1) * pageSize
 		return db.Offset(offset).Limit(pageSize)
 	}
+}
+
+// EncodePassword 将明文的密码进行加密
+func EncodePassword(plaintext string) (ciphertext string) {
+	options := &password.Options{SaltLen: 16, Iterations: 100, KeyLen: 32, HashFunction: sha512.New}
+	salt, encodedPwd := password.Encode(plaintext, options)
+	ciphertext = fmt.Sprintf("$pbkdf2-sha512$%s$%s", salt, encodedPwd)
+	return ciphertext
 }

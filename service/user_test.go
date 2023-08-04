@@ -23,3 +23,16 @@ func TestCreateUser(t *testing.T) {
 		panic(err)
 	}
 }
+
+func TestLoginCheck(t *testing.T) {
+	req := &douyin_core.UserLoginRequest{
+		Username: "Yakult",
+		Password: "123456",
+	}
+	u := UserServer{}
+	res, err := u.LoginCheck(context.Background(), req)
+	if err != nil {
+		panic(err)
+	}
+	t.Log(res.UserId)
+}

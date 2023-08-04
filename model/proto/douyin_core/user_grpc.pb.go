@@ -22,8 +22,8 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type UserClient interface {
-	CreateUser(ctx context.Context, in *UserRegisterRequest, opts ...grpc.CallOption) (*UserLoginResponse, error)
-	CheckPassword(ctx context.Context, in *UserLoginRequest, opts ...grpc.CallOption) (*UserLoginResponse, error)
+	CreateUser(ctx context.Context, in *UserRegisterRequest, opts ...grpc.CallOption) (*UserRegisterResponse, error)
+	LoginCheck(ctx context.Context, in *UserLoginRequest, opts ...grpc.CallOption) (*UserLoginResponse, error)
 }
 
 type userClient struct {
@@ -34,8 +34,8 @@ func NewUserClient(cc grpc.ClientConnInterface) UserClient {
 	return &userClient{cc}
 }
 
-func (c *userClient) CreateUser(ctx context.Context, in *UserRegisterRequest, opts ...grpc.CallOption) (*UserLoginResponse, error) {
-	out := new(UserLoginResponse)
+func (c *userClient) CreateUser(ctx context.Context, in *UserRegisterRequest, opts ...grpc.CallOption) (*UserRegisterResponse, error) {
+	out := new(UserRegisterResponse)
 	err := c.cc.Invoke(ctx, "/douyin.core.User/CreateUser", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -43,9 +43,9 @@ func (c *userClient) CreateUser(ctx context.Context, in *UserRegisterRequest, op
 	return out, nil
 }
 
-func (c *userClient) CheckPassword(ctx context.Context, in *UserLoginRequest, opts ...grpc.CallOption) (*UserLoginResponse, error) {
+func (c *userClient) LoginCheck(ctx context.Context, in *UserLoginRequest, opts ...grpc.CallOption) (*UserLoginResponse, error) {
 	out := new(UserLoginResponse)
-	err := c.cc.Invoke(ctx, "/douyin.core.User/CheckPassword", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/douyin.core.User/LoginCheck", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -56,8 +56,8 @@ func (c *userClient) CheckPassword(ctx context.Context, in *UserLoginRequest, op
 // All implementations must embed UnimplementedUserServer
 // for forward compatibility
 type UserServer interface {
-	CreateUser(context.Context, *UserRegisterRequest) (*UserLoginResponse, error)
-	CheckPassword(context.Context, *UserLoginRequest) (*UserLoginResponse, error)
+	CreateUser(context.Context, *UserRegisterRequest) (*UserRegisterResponse, error)
+	LoginCheck(context.Context, *UserLoginRequest) (*UserLoginResponse, error)
 	mustEmbedUnimplementedUserServer()
 }
 
@@ -65,11 +65,11 @@ type UserServer interface {
 type UnimplementedUserServer struct {
 }
 
-func (UnimplementedUserServer) CreateUser(context.Context, *UserRegisterRequest) (*UserLoginResponse, error) {
+func (UnimplementedUserServer) CreateUser(context.Context, *UserRegisterRequest) (*UserRegisterResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateUser not implemented")
 }
-func (UnimplementedUserServer) CheckPassword(context.Context, *UserLoginRequest) (*UserLoginResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CheckPassword not implemented")
+func (UnimplementedUserServer) LoginCheck(context.Context, *UserLoginRequest) (*UserLoginResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method LoginCheck not implemented")
 }
 func (UnimplementedUserServer) mustEmbedUnimplementedUserServer() {}
 
@@ -102,20 +102,20 @@ func _User_CreateUser_Handler(srv interface{}, ctx context.Context, dec func(int
 	return interceptor(ctx, in, info, handler)
 }
 
-func _User_CheckPassword_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _User_LoginCheck_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UserLoginRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServer).CheckPassword(ctx, in)
+		return srv.(UserServer).LoginCheck(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/douyin.core.User/CheckPassword",
+		FullMethod: "/douyin.core.User/LoginCheck",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServer).CheckPassword(ctx, req.(*UserLoginRequest))
+		return srv.(UserServer).LoginCheck(ctx, req.(*UserLoginRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -132,8 +132,8 @@ var User_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _User_CreateUser_Handler,
 		},
 		{
-			MethodName: "CheckPassword",
-			Handler:    _User_CheckPassword_Handler,
+			MethodName: "LoginCheck",
+			Handler:    _User_LoginCheck_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
