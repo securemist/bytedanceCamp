@@ -8,13 +8,9 @@ package main
 import (
 	"bytedanceCamp/dao"
 	"bytedanceCamp/model"
-	"go.uber.org/zap"
 )
 
 func main() {
-	db, err := dao.GetDB()
-	if err != nil {
-		zap.S().Fatalf("connect database error: %s", err)
-	}
+	db := dao.GetDB()
 	db.AutoMigrate(&model.User{})
 }

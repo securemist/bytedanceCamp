@@ -1,7 +1,7 @@
 /********************************************************************************
 * @author: Yakult
 * @date: 2023/8/2 21:37
-* @description:
+* @description: 与数据库建立连接，提供一个全局变量供其他包使用
 ********************************************************************************/
 
 package dao
@@ -19,7 +19,9 @@ import (
 	"time"
 )
 
-func GetDB() (*gorm.DB, error) {
+var _db *gorm.DB
+
+func init() {
 	username := config.GetConfig().Mysql.UserName // 数据库用户名
 	host := config.GetConfig().Mysql.Host         // 数据库地址
 	password := config.GetConfig().Mysql.Password // 数据库密码
@@ -36,7 +38,8 @@ func GetDB() (*gorm.DB, error) {
 			Colorful:      true,        // Disable color
 		},
 	)
-	_db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{
+	var err error
+	_db, err = gorm.Open(mysql.Open(dsn), &gorm.Config{
 		Logger: newLogger,
 		NamingStrategy: schema.NamingStrategy{
 			SingularTable: true,
@@ -44,11 +47,15 @@ func GetDB() (*gorm.DB, error) {
 	})
 	if err != nil {
 		zap.S().Fatalf("connect database error: %s", err)
-		return nil, err
+		return
 	}
 	sqlDB, _ := _db.DB()
 	//设置数据库连接池参数
 	sqlDB.SetMaxOpenConns(50) //设置数据库连接池最大连接数
 	sqlDB.SetMaxIdleConns(20) //连接池最大允许的空闲连接数，如果没有sql任务需要执行的连接数大于20，超过的连接会被连接池关闭
-	return _db, err
+}
+
+// GetDB 提供一个函数给别的包使用
+func GetDB() *gorm.DB {
+	return _db
 }

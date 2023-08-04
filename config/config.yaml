@@ -8,3 +8,10 @@ mysql:
   username: "root"
   password: "chg123456"
   dbName: "camp"
+
+jwt:
+  secret: "?+-31E2~ck8?0mm6jpke$&0xm^43E=-6"
+
+consul:
+  host: "127.0.0.1"
+  port: 8500

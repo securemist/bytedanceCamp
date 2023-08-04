@@ -12,8 +12,10 @@ import (
 )
 
 type Config struct {
-	Log   LogConfig   `mapstructure:"log"`
-	Mysql MysqlConfig `mapstructure:"mysql"`
+	Log    LogConfig    `mapstructure:"log"`
+	Mysql  MysqlConfig  `mapstructure:"mysql"`
+	Jwt    JwtConfig    `mapstructure:"jwt"`
+	Consul ConsulConfig `mapstructure:"consul"`
 }
 
 // MysqlConfig mysql相关
@@ -31,15 +33,25 @@ type LogConfig struct {
 	Level string `mapstructure:"level"`
 }
 
+// JwtConfig jwt token相关
+type JwtConfig struct {
+	Secret string `mapstructure:"secret"`
+}
+
+type ConsulConfig struct {
+	Host string `mapstructure:"host"`
+	Port int    `mapstructure:"port"`
+}
+
 var c Config
 
 func init() {
 	// 设置文件名
-	viper.SetConfigName("mysql")
+	viper.SetConfigName("config")
 	// 设置文件类型
 	viper.SetConfigType("yaml")
 	// 设置文件路径，可以多个viper会根据设置顺序依次查找
-	viper.AddConfigPath("./config")
+	viper.AddConfigPath("/Users/yakult/Documents/code/GoLang/bytedanceCamp/config")
 	err := viper.ReadInConfig()
 	if err != nil {
 		panic(fmt.Errorf("fatal error config file: %s", err))
