@@ -24,6 +24,7 @@ const _ = grpc.SupportPackageIsVersion7
 type UserClient interface {
 	CreateUser(ctx context.Context, in *UserRegisterRequest, opts ...grpc.CallOption) (*UserRegisterResponse, error)
 	LoginCheck(ctx context.Context, in *UserLoginRequest, opts ...grpc.CallOption) (*UserLoginResponse, error)
+	GetUserInfo(ctx context.Context, in *UserInfoRequest, opts ...grpc.CallOption) (*UserInfoResponse, error)
 }
 
 type userClient struct {
@@ -52,12 +53,22 @@ func (c *userClient) LoginCheck(ctx context.Context, in *UserLoginRequest, opts 
 	return out, nil
 }
 
+func (c *userClient) GetUserInfo(ctx context.Context, in *UserInfoRequest, opts ...grpc.CallOption) (*UserInfoResponse, error) {
+	out := new(UserInfoResponse)
+	err := c.cc.Invoke(ctx, "/douyin.core.User/GetUserInfo", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // UserServer is the server API for User service.
 // All implementations must embed UnimplementedUserServer
 // for forward compatibility
 type UserServer interface {
 	CreateUser(context.Context, *UserRegisterRequest) (*UserRegisterResponse, error)
 	LoginCheck(context.Context, *UserLoginRequest) (*UserLoginResponse, error)
+	GetUserInfo(context.Context, *UserInfoRequest) (*UserInfoResponse, error)
 	mustEmbedUnimplementedUserServer()
 }
 
@@ -70,6 +81,9 @@ func (UnimplementedUserServer) CreateUser(context.Context, *UserRegisterRequest)
 }
 func (UnimplementedUserServer) LoginCheck(context.Context, *UserLoginRequest) (*UserLoginResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method LoginCheck not implemented")
+}
+func (UnimplementedUserServer) GetUserInfo(context.Context, *UserInfoRequest) (*UserInfoResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUserInfo not implemented")
 }
 func (UnimplementedUserServer) mustEmbedUnimplementedUserServer() {}
 
@@ -120,6 +134,24 @@ func _User_LoginCheck_Handler(srv interface{}, ctx context.Context, dec func(int
 	return interceptor(ctx, in, info, handler)
 }
 
+func _User_GetUserInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UserInfoRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServer).GetUserInfo(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/douyin.core.User/GetUserInfo",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServer).GetUserInfo(ctx, req.(*UserInfoRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // User_ServiceDesc is the grpc.ServiceDesc for User service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -134,6 +166,10 @@ var User_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "LoginCheck",
 			Handler:    _User_LoginCheck_Handler,
+		},
+		{
+			MethodName: "GetUserInfo",
+			Handler:    _User_GetUserInfo_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
