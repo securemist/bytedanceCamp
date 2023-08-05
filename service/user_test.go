@@ -36,3 +36,13 @@ func TestLoginCheck(t *testing.T) {
 	}
 	t.Log(res.UserId)
 }
+
+func TestGetUserInfo(t *testing.T) {
+	req := &douyin_core.UserInfoRequest{UserId: 445243736461312}
+	u := UserServer{}
+	res, err := u.GetUserInfo(context.Background(), req)
+	if err != nil {
+		panic(err)
+	}
+	t.Log(res)
+}

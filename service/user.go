@@ -100,3 +100,28 @@ func (u *UserServer) LoginCheck(ctx context.Context, req *douyin_core.UserLoginR
 	}
 	return &response, nil
 }
+
+// GetUserInfo 用户信息
+func (u *UserServer) GetUserInfo(ctx context.Context, req *douyin_core.UserInfoRequest) (*douyin_core.UserInfoResponse, error) {
+	user := model.User{}
+	result := dao.GetDB().Where(model.User{Uuid: req.UserId}).First(&user)
+	if result.RowsAffected == 0 {
+		zap.S().Errorf("%s用户不存在", req.UserId)
+		return nil, status.Errorf(codes.Internal, "%d用户不存在", req.UserId)
+	}
+	response := douyin_core.UserInfoResponse{
+		StatusCode: 0,
+		UserInfo: &douyin_core.UserInfo{
+			UserId:        user.Uuid,
+			Name:          user.UserName,
+			FollowCount:   user.Followings,
+			FollowerCount: user.Followers,
+			Avatar:        user.Avatar,
+			Signature:     user.Signature,
+			TotalFavorite: user.TotalFavorite,
+			WorkCount:     user.WorkCount,
+			FavoriteCount: user.FavoriteCount,
+		},
+	}
+	return &response, nil
+}

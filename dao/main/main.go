@@ -12,5 +12,5 @@ import (
 
 func main() {
 	db := dao.GetDB()
-	db.AutoMigrate(&model.User{})
+	db.AutoMigrate(&model.Video{})
 }

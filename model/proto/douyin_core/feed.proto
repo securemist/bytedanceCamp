@@ -1,0 +1,53 @@
+// protoc -I . feed.proto --go_out=. --go-grpc_out=.
+syntax = "proto3";
+option go_package = ".;douyin_core";
+package douyin.core;
+
+service Feed {
+  rpc GetFeed(FeedRequest) returns (FeedResponse);
+  rpc PublishVideo(PublishVideoRequest) returns (PublishVideoResponse);
+  rpc PublishList(PublishListRequest) returns (PublishListResponse);
+}
+// 视频流
+message FeedRequest {
+  optional int64 latest_time = 1; // 可选参数，限制返回视频的最新投稿时间戳，精确到秒，不填表示当前时间
+  optional string token = 2; // 可选参数，登录用户设置
+}
+
+message FeedResponse {
+  int32 status_code = 1; // 状态码，0-成功，其他值-失败
+  optional string status_msg = 2; // 返回状态描述
+  repeated VideoInfo video_list = 3; // 视频列表
+  optional int64 next_time = 4; // 本次返回的视频中，发布最早的时间，作为下次请求时的latest_time
+}
+
+message VideoInfo {
+  int64 video_id = 1; // 视频唯一标识
+  int64 author_id = 2; // 视频作者id
+  string play_url = 3; // 视频播放地址
+  string cover_url = 4; // 视频封面地址
+  int64 favorite_count = 5; // 视频的点赞总数
+  int64 comment_count = 6; // 视频的评论总数
+  bool is_favorite = 7; // true-已点赞，false-未点赞
+  string title = 8; // 视频标题
+}
+// 投稿
+message PublishVideoRequest{
+  bytes data = 1; // 视频数据
+  string title = 2; // 视频标题
+  int64 user_id = 3; // 用户id
+}
+
+message PublishVideoResponse{
+  int32 status_code = 1; // 状态码，0-成功，其他值-失败
+  optional string status_msg = 2; // 返回状态描述
+}
+// 发布列表
+message PublishListRequest {
+  int64 user_id = 1; // 用户id
+}
+message PublishListResponse {
+  int32 status_code = 1; // 状态码，0-成功，其他值-失败
+  optional string status_msg = 2; // 返回状态描述
+  repeated VideoInfo video_list = 3; // 用户发布的视频列表
+}
