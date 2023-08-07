@@ -12,10 +12,11 @@ import (
 )
 
 type Config struct {
-	Log    LogConfig    `mapstructure:"log"`
-	Mysql  MysqlConfig  `mapstructure:"mysql"`
-	Jwt    JwtConfig    `mapstructure:"jwt"`
-	Consul ConsulConfig `mapstructure:"consul"`
+	Log           LogConfig           `mapstructure:"log"`
+	Mysql         MysqlConfig         `mapstructure:"mysql"`
+	Jwt           JwtConfig           `mapstructure:"jwt"`
+	Consul        ConsulConfig        `mapstructure:"consul"`
+	ConsulService ConsulServiceConfig `mapstructure:"consul-service"`
 }
 
 // MysqlConfig mysql相关
@@ -41,6 +42,14 @@ type JwtConfig struct {
 type ConsulConfig struct {
 	Host string `mapstructure:"host"`
 	Port int    `mapstructure:"port"`
+}
+type ConsulServiceConfig struct {
+	User ConsulCommon `mapstructure:"user"`
+}
+
+type ConsulCommon struct {
+	Name string   `mapstructure:"name"`
+	Tags []string `mapstructure:"tags"`
 }
 
 var c Config

@@ -15,3 +15,8 @@ jwt:
 consul:
   host: "127.0.0.1"
   port: 8500
+
+consul-service:
+  user:
+    name: "user-srv"
+    tags: ["douyin", "yakult", "user", "srv"]
