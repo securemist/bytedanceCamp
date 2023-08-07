@@ -1,3 +1,9 @@
+/********************************************************************************
+* @author: Yakult
+* @date: 2023/8/7 11:22
+* @description:
+********************************************************************************/
+
 package main
 
 import (
@@ -22,7 +28,7 @@ func main() {
 	log.InitLogger(config.GetConfig().Log.Path, config.GetConfig().Log.Level)
 	// 注册grpc服务
 	server := grpc.NewServer()
-	douyin_core.RegisterUserServer(server, &service.UserServer{})
+	douyin_core.RegisterFeedServer(server, &service.FeedServer{})
 	port, _ := util.GetFreePort()
 	lis, err := net.Listen("tcp", fmt.Sprintf("%s:%d", "127.0.0.1", port))
 	if err != nil {
@@ -42,14 +48,14 @@ func main() {
 	err = registerClient.Register(
 		"127.0.0.1",
 		port,
-		config.GetConfig().ConsulService.User.Name,
-		config.GetConfig().ConsulService.User.Tags,
+		config.GetConfig().ConsulService.Feed.Name,
+		config.GetConfig().ConsulService.Feed.Tags,
 		ServiceId,
 	)
 	if err != nil {
-		zap.S().Errorf("注册user-srv服务失败: %s", err.Error())
+		zap.S().Errorf("feed-srv服务失败: %s", err.Error())
 	} else {
-		zap.S().Infof("user-srv服务注册成功: %s:%d", "127.0.0.1", port)
+		zap.S().Infof("feed-srv服务注册成功: %s:%d", "127.0.0.1", port)
 	}
 	// 优雅退出
 	quit := make(chan os.Signal)
@@ -57,8 +63,8 @@ func main() {
 	<-quit
 	err = registerClient.DeRegister(ServiceId)
 	if err != nil {
-		zap.S().Errorf("user-srv服务注销失败: %s", err.Error())
+		zap.S().Errorf("feed-srv服务注销失败: %s", err.Error())
 	} else {
-		zap.S().Infof("user-srv服务注销成功: %s:%d", "127.0.0.1", port)
+		zap.S().Infof("feed-srv服务注销成功: %s:%d", "127.0.0.1", port)
 	}
 }

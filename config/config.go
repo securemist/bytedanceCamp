@@ -45,6 +45,7 @@ type ConsulConfig struct {
 }
 type ConsulServiceConfig struct {
 	User ConsulCommon `mapstructure:"user"`
+	Feed ConsulCommon `mapstructure:"feed"`
 }
 
 type ConsulCommon struct {

@@ -19,4 +19,7 @@ consul:
 consul-service:
   user:
     name: "user-srv"
-    tags: ["douyin", "yakult", "user", "srv"]
+    tags: ["douyin", "Yakult", "user", "srv"]
+  feed:
+    name: "feed-srv"
+    tags: ["douyin", "Yakult", "feed", "srv"]
