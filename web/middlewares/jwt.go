@@ -1,7 +1,7 @@
 package middlewares
 
 import (
-	"bytedanceCamp/config"
+	"bytedanceCamp/dao/global"
 	"errors"
 	"net/http"
 
@@ -29,7 +29,7 @@ type CustomClaims struct {
 
 func NewJWT() *JWT {
 	return &JWT{
-		[]byte(config.GetConfig().Jwt.Secret),
+		[]byte(global.ProjectConfig.Jwt.Secret),
 	}
 }
 

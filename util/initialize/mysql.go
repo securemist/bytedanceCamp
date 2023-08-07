@@ -1,13 +1,13 @@
 /********************************************************************************
 * @author: Yakult
-* @date: 2023/8/2 21:37
-* @description: 与数据库建立连接，提供一个全局变量供其他包使用
+* @date: 2023/8/7 15:15
+* @description:
 ********************************************************************************/
 
-package dao
+package initialize
 
 import (
-	"bytedanceCamp/config"
+	"bytedanceCamp/dao/global"
 	"fmt"
 	"go.uber.org/zap"
 	"gorm.io/driver/mysql"
@@ -19,14 +19,12 @@ import (
 	"time"
 )
 
-var _db *gorm.DB
-
-func init() {
-	username := config.GetConfig().Mysql.UserName // 数据库用户名
-	host := config.GetConfig().Mysql.Host         // 数据库地址
-	password := config.GetConfig().Mysql.Password // 数据库密码
-	port := config.GetConfig().Mysql.Port         // 数据库端口号
-	DbName := config.GetConfig().Mysql.DbName     // 数据库名
+func initMysql() {
+	username := global.ProjectConfig.Mysql.UserName // 数据库用户名
+	host := global.ProjectConfig.Mysql.Host         // 数据库地址
+	password := global.ProjectConfig.Mysql.Password // 数据库密码
+	port := global.ProjectConfig.Mysql.Port         // 数据库端口号
+	DbName := global.ProjectConfig.Mysql.DbName     // 数据库名
 
 	dsn := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8mb4&parseTime=True&loc=Local",
 		username, password, host, port, DbName)
@@ -39,7 +37,7 @@ func init() {
 		},
 	)
 	var err error
-	_db, err = gorm.Open(mysql.Open(dsn), &gorm.Config{
+	global.MysqlDB, err = gorm.Open(mysql.Open(dsn), &gorm.Config{
 		Logger: newLogger,
 		NamingStrategy: schema.NamingStrategy{
 			SingularTable: true,
@@ -49,13 +47,8 @@ func init() {
 		zap.S().Fatalf("connect database error: %s", err)
 		return
 	}
-	sqlDB, _ := _db.DB()
+	sqlDB, _ := global.MysqlDB.DB()
 	//设置数据库连接池参数
 	sqlDB.SetMaxOpenConns(50) //设置数据库连接池最大连接数
 	sqlDB.SetMaxIdleConns(20) //连接池最大允许的空闲连接数，如果没有sql任务需要执行的连接数大于20，超过的连接会被连接池关闭
-}
-
-// GetDB 提供一个函数给别的包使用
-func GetDB() *gorm.DB {
-	return _db
 }

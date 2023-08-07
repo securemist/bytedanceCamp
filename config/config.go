@@ -6,17 +6,13 @@
 
 package config
 
-import (
-	"fmt"
-	"github.com/spf13/viper"
-)
-
 type Config struct {
 	Log           LogConfig           `mapstructure:"log"`
 	Mysql         MysqlConfig         `mapstructure:"mysql"`
 	Jwt           JwtConfig           `mapstructure:"jwt"`
 	Consul        ConsulConfig        `mapstructure:"consul"`
 	ConsulService ConsulServiceConfig `mapstructure:"consul-service"`
+	ConsulWeb     ConsulWebConfig     `mapstructure:"consul-web"`
 }
 
 // MysqlConfig mysql相关
@@ -44,34 +40,20 @@ type ConsulConfig struct {
 	Port int    `mapstructure:"port"`
 }
 type ConsulServiceConfig struct {
-	User ConsulCommon `mapstructure:"user"`
-	Feed ConsulCommon `mapstructure:"feed"`
+	User ConsulServiceCommon `mapstructure:"user"`
+	Feed ConsulServiceCommon `mapstructure:"feed"`
 }
-
-type ConsulCommon struct {
+type ConsulWebConfig struct {
+	User ConsulWebCommon `mapstructure:"user"`
+	Feed ConsulWebCommon `mapstructure:"feed"`
+}
+type ConsulServiceCommon struct {
 	Name string   `mapstructure:"name"`
 	Tags []string `mapstructure:"tags"`
 }
 
-var c Config
-
-func init() {
-	// 设置文件名
-	viper.SetConfigName("config")
-	// 设置文件类型
-	viper.SetConfigType("yaml")
-	// 设置文件路径，可以多个viper会根据设置顺序依次查找
-	viper.AddConfigPath("/Users/yakult/Documents/code/GoLang/bytedanceCamp/config")
-	err := viper.ReadInConfig()
-	if err != nil {
-		panic(fmt.Errorf("fatal error config file: %s", err))
-	}
-	err = viper.Unmarshal(&c)
-	if err != nil {
-		panic(fmt.Errorf("unmarshal config file error: %s", err))
-	}
-}
-
-func GetConfig() Config {
-	return c
+type ConsulWebCommon struct {
+	Name string   `mapstructure:"name"`
+	Tags []string `mapstructure:"tags"`
+	Port int      `mapstructure:"port"`
 }

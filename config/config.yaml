@@ -23,3 +23,13 @@ consul-service:
   feed:
     name: "feed-srv"
     tags: ["douyin", "Yakult", "feed", "srv"]
+
+consul-web:
+  user:
+    name: "user-web"
+    tags: ["douyin", "Yakult", "user", "web"]
+    port: 8021
+  feed:
+    name: "feed-web"
+    tags: ["douyin", "Yakult", "feed", "web"]
+    port: 8022

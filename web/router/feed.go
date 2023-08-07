@@ -6,12 +6,24 @@
 
 package router
 
-import "github.com/gin-gonic/gin"
+import (
+	"bytedanceCamp/web/middlewares"
+	"github.com/gin-gonic/gin"
+	"net/http"
+)
 
-func InitFeedRouter(router *gin.RouterGroup) {
+func FeedRouter() *gin.Engine {
+	router := gin.Default()
+	// 健康检查
+	router.GET("/health", func(ctx *gin.Context) {
+		ctx.Status(http.StatusOK)
+	})
+	// 配置跨域
+	router.Use(middlewares.Cors())
 	feedRouter := router.Group("feed")
 	{
-		// TODO 还没开始写路由，先占个位
+		//TODO 还没开始写路由，先占个位
 		feedRouter.POST("")
 	}
+	return router
 }

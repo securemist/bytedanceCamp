@@ -1,11 +1,11 @@
 package main
 
 import (
-	"bytedanceCamp/config"
+	"bytedanceCamp/dao/global"
 	"bytedanceCamp/model/proto/douyin_core"
 	"bytedanceCamp/service"
 	"bytedanceCamp/util"
-	"bytedanceCamp/util/log"
+	"bytedanceCamp/util/initialize"
 	"fmt"
 	"go.uber.org/zap"
 	"google.golang.org/grpc"
@@ -19,7 +19,7 @@ import (
 
 func main() {
 	// 1. 初始化日志
-	log.InitLogger(config.GetConfig().Log.Path, config.GetConfig().Log.Level)
+	initialize.Init()
 	// 注册grpc服务
 	server := grpc.NewServer()
 	douyin_core.RegisterUserServer(server, &service.UserServer{})
@@ -37,19 +37,19 @@ func main() {
 	// 注册服务健康检查
 	grpc_health_v1.RegisterHealthServer(server, health.NewServer())
 	// 注册user-srv服务
-	registerClient := util.NewRegistryClient(config.GetConfig().Consul.Host, config.GetConfig().Consul.Port)
+	registerClient := util.NewRegistryServiceClient(global.ProjectConfig.Consul.Host, global.ProjectConfig.Consul.Port)
 	ServiceId := fmt.Sprintf("%d", util.GenID())
 	err = registerClient.Register(
 		"127.0.0.1",
 		port,
-		config.GetConfig().ConsulService.User.Name,
-		config.GetConfig().ConsulService.User.Tags,
+		global.ProjectConfig.ConsulService.User.Name,
+		global.ProjectConfig.ConsulService.User.Tags,
 		ServiceId,
 	)
 	if err != nil {
-		zap.S().Errorf("注册user-srv服务失败: %s", err.Error())
+		zap.S().Errorf("注册%s服务失败: %s", global.ProjectConfig.ConsulService.User.Name, err.Error())
 	} else {
-		zap.S().Infof("user-srv服务注册成功: %s:%d", "127.0.0.1", port)
+		zap.S().Infof("注册%s服务成功: %s:%d", global.ProjectConfig.ConsulService.User.Name, "127.0.0.1", port)
 	}
 	// 优雅退出
 	quit := make(chan os.Signal)
@@ -57,8 +57,8 @@ func main() {
 	<-quit
 	err = registerClient.DeRegister(ServiceId)
 	if err != nil {
-		zap.S().Errorf("user-srv服务注销失败: %s", err.Error())
+		zap.S().Errorf("注销%s服务失败: %s", global.ProjectConfig.ConsulService.User.Name, err.Error())
 	} else {
-		zap.S().Infof("user-srv服务注销成功: %s:%d", "127.0.0.1", port)
+		zap.S().Infof("注销%s服务成功: %s:%d", global.ProjectConfig.ConsulService.User.Name, "127.0.0.1", port)
 	}
 }

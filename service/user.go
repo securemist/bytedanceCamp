@@ -7,7 +7,7 @@
 package service
 
 import (
-	"bytedanceCamp/dao"
+	"bytedanceCamp/dao/global"
 	"bytedanceCamp/model"
 	"bytedanceCamp/model/proto/douyin_core"
 	"bytedanceCamp/util"
@@ -38,7 +38,7 @@ type UserServer struct {
 func (u *UserServer) CreateUser(ctx context.Context, req *douyin_core.UserRegisterRequest) (*douyin_core.UserRegisterResponse, error) {
 	user := model.User{}
 	// 1. 查询用户是否存在
-	result := dao.GetDB().Where(model.User{UserName: req.Username}).First(&user)
+	result := global.MysqlDB.Where(model.User{UserName: req.Username}).First(&user)
 	if result.RowsAffected == 1 {
 		return nil, status.Errorf(codes.AlreadyExists, "用户已存在")
 	}
@@ -65,7 +65,7 @@ func (u *UserServer) CreateUser(ctx context.Context, req *douyin_core.UserRegist
 	}
 	user.JwtToken = token
 	// 5. 保存到数据库中
-	result = dao.GetDB().Create(&user)
+	result = global.MysqlDB.Create(&user)
 	if result.RowsAffected == 0 {
 		return nil, status.Errorf(codes.Internal, result.Error.Error())
 	}
@@ -80,7 +80,7 @@ func (u *UserServer) CreateUser(ctx context.Context, req *douyin_core.UserRegist
 // LoginCheck 用户登录
 func (u *UserServer) LoginCheck(ctx context.Context, req *douyin_core.UserLoginRequest) (*douyin_core.UserLoginResponse, error) {
 	user := model.User{}
-	result := dao.GetDB().Where(model.User{UserName: req.Username}).First(&user)
+	result := global.MysqlDB.Where(model.User{UserName: req.Username}).First(&user)
 	if result.RowsAffected == 0 {
 		zap.S().Errorf("%s用户不存在", req.Username)
 		return nil, status.Errorf(codes.Internal, "%s用户不存在", req.Username)
@@ -104,7 +104,7 @@ func (u *UserServer) LoginCheck(ctx context.Context, req *douyin_core.UserLoginR
 // GetUserInfo 用户信息
 func (u *UserServer) GetUserInfo(ctx context.Context, req *douyin_core.UserInfoRequest) (*douyin_core.UserInfoResponse, error) {
 	user := model.User{}
-	result := dao.GetDB().Where(model.User{Uuid: req.UserId}).First(&user)
+	result := global.MysqlDB.Where(model.User{Uuid: req.UserId}).First(&user)
 	if result.RowsAffected == 0 {
 		zap.S().Errorf("%s用户不存在", req.UserId)
 		return nil, status.Errorf(codes.Internal, "%d用户不存在", req.UserId)

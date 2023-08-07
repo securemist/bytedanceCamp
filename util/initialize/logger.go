@@ -4,7 +4,7 @@
 * @description:
 ********************************************************************************/
 
-package log
+package initialize
 
 import (
 	"go.uber.org/zap"
@@ -13,8 +13,8 @@ import (
 	"os"
 )
 
-// InitLogger logPath 日志文件路径 loglevel 日志级别
-func InitLogger(logPath string, loglevel string) {
+// initLogger logPath 日志文件路径 loglevel 日志级别
+func initLogger(logPath string, loglevel string) {
 	// 日志分割
 	hook := lumberjack.Logger{
 		Filename:   logPath, // 日志文件路径，默认 os.TempDir()

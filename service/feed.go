@@ -7,7 +7,7 @@
 package service
 
 import (
-	"bytedanceCamp/dao"
+	"bytedanceCamp/dao/global"
 	"bytedanceCamp/model"
 	"bytedanceCamp/model/proto/douyin_core"
 	"bytedanceCamp/util"
@@ -29,7 +29,7 @@ func (f *FeedServer) GetFeed(ctx context.Context, req *douyin_core.FeedRequest) 
 		req.LatestTime = &nowTime
 	}
 	var videos []model.Video
-	result := dao.GetDB().Order("created_at desc").Limit(30).Find(&videos)
+	result := global.MysqlDB.Order("created_at desc").Limit(30).Find(&videos)
 	if result.Error != nil {
 		zap.S().Errorf("获取视频流失败: %s", result.Error)
 		return nil, status.Errorf(codes.Internal, "获取视频流失败: %s", result.Error)
@@ -73,7 +73,7 @@ func (f *FeedServer) PublishVideo(ctx context.Context, req *douyin_core.PublishV
 		PlayUrl:  "http://play_url_test.com",
 		CoverUrl: "http://cover_url_test.com",
 	}
-	result := dao.GetDB().Create(&video)
+	result := global.MysqlDB.Create(&video)
 	if result.RowsAffected == 0 {
 		return nil, status.Errorf(codes.Internal, "%s视频投稿失败: %s", video.Title, result.Error.Error())
 	}
@@ -86,7 +86,7 @@ func (f *FeedServer) PublishVideo(ctx context.Context, req *douyin_core.PublishV
 // PublishList 投稿列表
 func (f *FeedServer) PublishList(ctx context.Context, req *douyin_core.PublishListRequest) (*douyin_core.PublishListResponse, error) {
 	var videos []model.Video
-	result := dao.GetDB().Where(model.Video{AuthorId: req.UserId}).Find(&videos)
+	result := global.MysqlDB.Where(model.Video{AuthorId: req.UserId}).Find(&videos)
 	if result.Error != nil {
 		zap.S().Errorf("获取投稿列表失败: %s", result.Error)
 		return nil, status.Errorf(codes.Internal, "获取投稿列表失败: %s", result.Error)

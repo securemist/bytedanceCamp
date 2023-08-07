@@ -6,12 +6,24 @@
 
 package router
 
-import "github.com/gin-gonic/gin"
+import (
+	"bytedanceCamp/web/middlewares"
+	"github.com/gin-gonic/gin"
+	"net/http"
+)
 
-func InitUserRouter(router *gin.RouterGroup) {
+func UserRouter() *gin.Engine {
+	router := gin.Default()
+	// 健康检查
+	router.GET("/health", func(ctx *gin.Context) {
+		ctx.Status(http.StatusOK)
+	})
+	// 配置跨域
+	router.Use(middlewares.Cors())
 	userRouter := router.Group("user")
 	{
-		// TODO 还没开始写路由，先占个位
+		//TODO 还没开始写路由，先占个位
 		userRouter.POST("")
 	}
+	return router
 }

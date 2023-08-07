@@ -7,32 +7,32 @@
 package util
 
 import (
-	"bytedanceCamp/config"
+	"bytedanceCamp/dao/global"
 	"fmt"
 	"github.com/hashicorp/consul/api"
 )
 
-type Registry struct {
+type ServiceRegistry struct {
 	Host string
 	Port int
 }
 
-type RegistryClient interface {
+type RegistryServiceClient interface {
 	Register(address string, port int, name string, tags []string, id string) error
 	DeRegister(serviceId string) error
 }
 
-func NewRegistryClient(host string, port int) RegistryClient {
-	return &Registry{
+func NewRegistryServiceClient(host string, port int) RegistryServiceClient {
+	return &ServiceRegistry{
 		Host: host,
 		Port: port,
 	}
 }
 
 // Register 服务注册
-func (r *Registry) Register(address string, port int, name string, tags []string, id string) error {
+func (r *ServiceRegistry) Register(address string, port int, name string, tags []string, id string) error {
 	cfg := api.DefaultConfig()
-	cfg.Address = fmt.Sprintf("%s:%d", config.GetConfig().Consul.Host, config.GetConfig().Consul.Port)
+	cfg.Address = fmt.Sprintf("%s:%d", global.ProjectConfig.Consul.Host, global.ProjectConfig.Consul.Port)
 
 	client, err := api.NewClient(cfg)
 	if err != nil {
@@ -57,9 +57,9 @@ func (r *Registry) Register(address string, port int, name string, tags []string
 	return err
 }
 
-func (r *Registry) DeRegister(serviceId string) error {
+func (r *ServiceRegistry) DeRegister(serviceId string) error {
 	cfg := api.DefaultConfig()
-	cfg.Address = fmt.Sprintf("%s:%d", config.GetConfig().Consul.Host, config.GetConfig().Consul.Port)
+	cfg.Address = fmt.Sprintf("%s:%d", global.ProjectConfig.Consul.Host, global.ProjectConfig.Consul.Port)
 
 	client, err := api.NewClient(cfg)
 	if err != nil {

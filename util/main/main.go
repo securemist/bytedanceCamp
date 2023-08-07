@@ -6,11 +6,10 @@
 package main
 
 import (
-	"bytedanceCamp/dao"
+	"bytedanceCamp/dao/global"
 	"bytedanceCamp/model"
 )
 
 func main() {
-	db := dao.GetDB()
-	db.AutoMigrate(&model.Video{})
+	global.MysqlDB.AutoMigrate(&model.Video{})
 }
