@@ -16,4 +16,5 @@ var (
 	MysqlDB       *gorm.DB               // Mysql
 	ProjectConfig config.Config          // 配置文件
 	UserSrvClient douyin_core.UserClient // service端微服务
+	FeedSrvClient douyin_core.FeedClient
 )

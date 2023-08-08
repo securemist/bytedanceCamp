@@ -55,8 +55,8 @@ func (u *UserServer) CreateUser(ctx context.Context, req *douyin_core.UserRegist
 		UserName: user.UserName,
 		RegisteredClaims: jwt.RegisteredClaims{
 			Issuer:    "Yakult",
-			ExpiresAt: &jwt.NumericDate{Time: time.Now()},
-			NotBefore: &jwt.NumericDate{Time: time.Now().Add(time.Hour * 24 * 30)},
+			NotBefore: &jwt.NumericDate{Time: time.Now()},
+			ExpiresAt: &jwt.NumericDate{Time: time.Now().Add(time.Hour * 24 * 30)},
 		},
 	}
 	token, err := j.CreateToken(claims)

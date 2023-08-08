@@ -8,6 +8,7 @@ package service
 
 import (
 	"bytedanceCamp/model/proto/douyin_core"
+	"bytedanceCamp/util/initialize"
 	"context"
 	"testing"
 )
@@ -38,6 +39,7 @@ func TestLoginCheck(t *testing.T) {
 }
 
 func TestGetUserInfo(t *testing.T) {
+	initialize.Init()
 	req := &douyin_core.UserInfoRequest{UserId: 445243736461312}
 	u := UserServer{}
 	res, err := u.GetUserInfo(context.Background(), req)

@@ -7,6 +7,7 @@
 package router
 
 import (
+	"bytedanceCamp/web/api"
 	"bytedanceCamp/web/middlewares"
 	"github.com/gin-gonic/gin"
 	"net/http"
@@ -23,7 +24,9 @@ func UserRouter() *gin.Engine {
 	userRouter := router.Group("user")
 	{
 		//TODO 还没开始写路由，先占个位
-		userRouter.POST("")
+		userRouter.GET("detail", middlewares.JWTAuth(), api.GetUserInfo)
+		userRouter.POST("register", api.CreateUser)
+		userRouter.POST("login", api.LoginCheck)
 	}
 	return router
 }

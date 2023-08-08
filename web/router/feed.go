@@ -22,8 +22,9 @@ func FeedRouter() *gin.Engine {
 	router.Use(middlewares.Cors())
 	feedRouter := router.Group("feed")
 	{
-		//TODO 还没开始写路由，先占个位
-		feedRouter.POST("")
+		//TODO 还没开始写处理函数，先占个位
+		feedRouter.GET("UserInfo")
+
 	}
 	return router
 }

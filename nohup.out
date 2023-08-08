@@ -1,167 +1,20 @@
-package command-line-arguments
-	imports bytedanceCamp/service
-	imports bytedanceCamp/model/global
-	imports bytedanceCamp/config
-	imports bytedanceCamp/model/global: import cycle not allowed
-package command-line-arguments
-	imports bytedanceCamp/model/global
-	imports bytedanceCamp/config
-	imports bytedanceCamp/model/global: import cycle not allowed
-2023/08/07 15:50:39 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
-2023-08-07T15:50:39.103+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:52	注册user-srv服务成功: 127.0.0.1:65025
-2023-08-07T15:50:39.487+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:58	注册feed-srv服务成功: 127.0.0.1:65030
-2023-08-07T15:51:33.918+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:68	feed-srv服务注销成功: 127.0.0.1:65030
-2023-08-07T15:51:33.920+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:62	user-srv服务注销成功: 127.0.0.1:65025
-stat ./cmd/web/user/main.go: no such file or directory
-2023/08/07 15:55:18 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
-2023-08-07T15:55:18.437+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:52	注册user-srv服务成功: 127.0.0.1:65173
-2023-08-07T15:55:18.660+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:58	注册feed-srv服务成功: 127.0.0.1:65181
-2023/08/07 15:56:35 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
-2023/08/07 15:56:35 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
-2023-08-07T15:56:35.861+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:62	注销user-srv服务成功: 127.0.0.1:65173
-2023/08/07 15:56:35 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
-2023-08-07T15:56:35.866+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:68	注销feed-srv服务成功: 127.0.0.1:65181
-2023/08/07 15:56:50 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
-2023-08-07T15:56:50.633+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:58	注册feed-srv服务成功: 127.0.0.1:65246
-2023/08/07 15:56:50 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
-2023-08-07T15:56:51.001+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:52	注册user-srv服务成功: 127.0.0.1:65250
+2023/08/08 10:03:15 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023/08/08 10:03:15 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023-08-08T10:03:15.203+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:58	注册feed-srv服务成功: 127.0.0.1:65142
+2023/08/08 10:03:15 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023-08-08T10:03:15.575+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:52	注册user-srv服务成功: 127.0.0.1:65148
 [GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
 
 [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
-[GIN-debug] GET    /health                   --> bytedanceCamp/web/router.Routers.func1 (3 handlers)
-[GIN-debug] POST   /user                     --> bytedanceCamp/web/middlewares.Cors.func1 (3 handlers)
-[GIN-debug] POST   /feed                     --> bytedanceCamp/web/middlewares.Cors.func1 (3 handlers)
-2023-08-07T15:56:51.356+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:39	注册user-web服务成功: 127.0.0.1:8021
-2023-08-07T15:56:51.356+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:42	启动服务器，端口：8021
+[GIN-debug] GET    /health                   --> bytedanceCamp/web/router.FeedRouter.func1 (3 handlers)
+[GIN-debug] GET    /feed/UserInfo            --> bytedanceCamp/web/middlewares.Cors.func1 (3 handlers)
+2023-08-08T10:03:15.948+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/feed/main.go:39	注册feed-web服务成功: 127.0.0.1:8022
 [GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
 Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
-[GIN-debug] Listening and serving HTTP on localhost:8021
-[GIN] 2023/08/07 - 15:56:53 | 404 |      15.483µs |       127.0.0.1 | PRI      "*"
-[GIN] 2023/08/07 - 15:56:58 | 404 |      12.487µs |       127.0.0.1 | PRI      "*"
-[GIN] 2023/08/07 - 15:57:03 | 404 |       4.948µs |       127.0.0.1 | PRI      "*"
-[GIN] 2023/08/07 - 15:57:08 | 404 |       3.767µs |       127.0.0.1 | PRI      "*"
-[GIN] 2023/08/07 - 15:57:13 | 404 |      11.082µs |       127.0.0.1 | PRI      "*"
-[GIN] 2023/08/07 - 15:57:18 | 404 |       7.693µs |       127.0.0.1 | PRI      "*"
-[GIN] 2023/08/07 - 15:57:23 | 404 |       7.711µs |       127.0.0.1 | PRI      "*"
-[GIN] 2023/08/07 - 15:57:28 | 404 |       5.442µs |       127.0.0.1 | PRI      "*"
-2023-08-07T15:57:32.399+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:68	注销feed-srv服务成功: 127.0.0.1:65246
-2023-08-07T15:57:32.402+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:56	注销user-web服务成功
-2023-08-07T15:57:32.403+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:62	注销user-srv服务成功: 127.0.0.1:65250
-2023/08/07 15:58:33 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
-2023-08-07T15:58:33.159+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:58	注册feed-srv服务成功: 127.0.0.1:65300
-2023/08/07 15:58:33 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
-2023-08-07T15:58:33.355+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:52	注册user-srv服务成功: 127.0.0.1:65304
-[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
-
-[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
- - using env:	export GIN_MODE=release
- - using code:	gin.SetMode(gin.ReleaseMode)
-
-[GIN-debug] GET    /health                   --> bytedanceCamp/web/router.Routers.func1 (3 handlers)
-[GIN-debug] POST   /user                     --> bytedanceCamp/web/middlewares.Cors.func1 (3 handlers)
-[GIN-debug] POST   /feed                     --> bytedanceCamp/web/middlewares.Cors.func1 (3 handlers)
-2023-08-07T15:58:33.787+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:39	注册user-web服务成功: 127.0.0.1:8021
-[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
-Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
-[GIN-debug] Listening and serving HTTP on localhost:8021
-[GIN] 2023/08/07 - 15:58:34 | 404 |      11.085µs |       127.0.0.1 | PRI      "*"
-[GIN] 2023/08/07 - 15:58:39 | 404 |        9.51µs |       127.0.0.1 | PRI      "*"
-[GIN] 2023/08/07 - 15:58:44 | 404 |       3.749µs |       127.0.0.1 | PRI      "*"
-[GIN] 2023/08/07 - 15:58:49 | 404 |       7.426µs |       127.0.0.1 | PRI      "*"
-[GIN] 2023/08/07 - 15:58:54 | 404 |      11.115µs |       127.0.0.1 | PRI      "*"
-2023-08-07T15:58:59.311+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:68	注销feed-srv服务成功: 127.0.0.1:65300
-2023-08-07T15:58:59.314+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:55	注销user-web服务成功
-2023/08/07 15:58:59 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
-2023/08/07 15:58:59 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
-2023-08-07T15:58:59.317+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:62	注销user-srv服务成功: 127.0.0.1:65304
-2023/08/07 16:05:54 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
-2023-08-07T16:05:54.140+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:52	注册user-srv服务成功: 127.0.0.1:65441
-[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
-
-[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
- - using env:	export GIN_MODE=release
- - using code:	gin.SetMode(gin.ReleaseMode)
-
-[GIN-debug] GET    /health                   --> bytedanceCamp/web/router.Routers.func1 (3 handlers)
-[GIN-debug] POST   /user                     --> bytedanceCamp/web/middlewares.Cors.func1 (3 handlers)
-[GIN-debug] POST   /feed                     --> bytedanceCamp/web/middlewares.Cors.func1 (3 handlers)
-2023-08-07T16:05:54.613+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:39	注册user-web服务成功: 127.0.0.1:8021
-[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
-Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
-[GIN-debug] Listening and serving HTTP on localhost:8021
-2023-08-07T16:05:55.029+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:58	注册feed-srv服务成功: 127.0.0.1:65451
-[GIN] 2023/08/07 - 16:05:58 | 200 |       1.815µs |       127.0.0.1 | GET      "/health"
-[GIN] 2023/08/07 - 16:06:03 | 200 |       2.164µs |       127.0.0.1 | GET      "/health"
-[GIN] 2023/08/07 - 16:06:08 | 200 |       2.198µs |       127.0.0.1 | GET      "/health"
-2023/08/07 16:06:11 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
-2023/08/07 16:06:11 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
-2023-08-07T16:06:11.163+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:62	注销user-srv服务成功: 127.0.0.1:65441
-2023/08/07 16:06:11 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
-2023-08-07T16:06:11.164+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:68	注销feed-srv服务成功: 127.0.0.1:65451
-2023-08-07T16:06:11.166+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:55	注销user-web服务成功
-2023/08/07 17:02:52 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
-2023-08-07T17:02:52.686+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:52	注册user-srv服务成功: 127.0.0.1:51276
-2023-08-07T17:02:52.936+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:58	注册feed-srv服务成功: 127.0.0.1:51281
-[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
-
-[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
- - using env:	export GIN_MODE=release
- - using code:	gin.SetMode(gin.ReleaseMode)
-
-[GIN-debug] GET    /health                   --> bytedanceCamp/web/router.Routers.func1 (3 handlers)
-[GIN-debug] POST   /user                     --> bytedanceCamp/web/middlewares.Cors.func1 (3 handlers)
-[GIN-debug] POST   /feed                     --> bytedanceCamp/web/middlewares.Cors.func1 (3 handlers)
-2023-08-07T17:02:53.450+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:39	注册user-web服务成功: 127.0.0.1:8021
-[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
-Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
-[GIN-debug] Listening and serving HTTP on localhost:8021
-2023-08-07T17:02:53.617+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:68	注销feed-srv服务成功: 127.0.0.1:51281
-2023-08-07T17:02:53.618+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:55	注销user-web服务成功
-2023-08-07T17:02:53.618+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:62	注销user-srv服务成功: 127.0.0.1:51276
-package command-line-arguments is not a main package
-2023/08/07 17:05:17 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
-2023-08-07T17:05:18.044+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:52	注册user-srv服务成功: 127.0.0.1:51391
-2023-08-07T17:05:18.556+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:58	注册feed-srv服务成功: 127.0.0.1:51403
-[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
-
-[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
- - using env:	export GIN_MODE=release
- - using code:	gin.SetMode(gin.ReleaseMode)
-
-[GIN-debug] GET    /health                   --> bytedanceCamp/web/router.Routers.func1 (3 handlers)
-[GIN-debug] POST   /user                     --> bytedanceCamp/web/middlewares.Cors.func1 (3 handlers)
-[GIN-debug] POST   /feed                     --> bytedanceCamp/web/middlewares.Cors.func1 (3 handlers)
-2023-08-07T17:05:19.020+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:39	注册user-web服务成功: 127.0.0.1:8021
-[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
-Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
-[GIN-debug] Listening and serving HTTP on localhost:8021
-[GIN] 2023/08/07 - 17:05:20 | 200 |       2.348µs |       127.0.0.1 | GET      "/health"
-[GIN] 2023/08/07 - 17:05:25 | 200 |       2.085µs |       127.0.0.1 | GET      "/health"
-[GIN] 2023/08/07 - 17:05:30 | 200 |       1.402µs |       127.0.0.1 | GET      "/health"
-[GIN] 2023/08/07 - 17:05:35 | 200 |       2.333µs |       127.0.0.1 | GET      "/health"
-[GIN] 2023/08/07 - 17:05:40 | 200 |       1.352µs |       127.0.0.1 | GET      "/health"
-[GIN] 2023/08/07 - 17:05:45 | 200 |       2.037µs |       127.0.0.1 | GET      "/health"
-[GIN] 2023/08/07 - 17:05:50 | 200 |       2.412µs |       127.0.0.1 | GET      "/health"
-2023/08/07 17:05:53 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
-2023-08-07T17:05:53.214+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:55	注销user-web服务成功
-2023-08-07T17:05:53.216+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:62	注销user-srv服务成功: 127.0.0.1:51391
-2023/08/07 17:05:53 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
-2023-08-07T17:05:53.217+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:68	注销feed-srv服务成功: 127.0.0.1:51403
-package command-line-arguments is not a main package
-# command-line-arguments
-cmd/web/user/main.go:25:20: undefined: router.InitUserRouter
-2023/08/07 17:12:36 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
-2023-08-07T17:12:36.955+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:52	注册user-srv服务成功: 127.0.0.1:51543
-2023-08-07T17:12:37.324+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:58	注册feed-srv服务成功: 127.0.0.1:51549
-2023-08-07T17:13:48.525+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:68	注销feed-srv服务成功: 127.0.0.1:51549
-2023-08-07T17:13:48.527+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:62	注销user-srv服务成功: 127.0.0.1:51543
-package command-line-arguments is not a main package
-2023/08/07 17:13:52 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
-2023-08-07T17:13:52.021+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:52	注册user-srv服务成功: 127.0.0.1:51598
-2023-08-07T17:13:52.222+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:58	注册feed-srv服务成功: 127.0.0.1:51603
+[GIN-debug] Listening and serving HTTP on localhost:8022
 [GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
 
 [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
@@ -169,22 +22,74 @@ package command-line-arguments is not a main package
  - using code:	gin.SetMode(gin.ReleaseMode)
 
 [GIN-debug] GET    /health                   --> bytedanceCamp/web/router.UserRouter.func1 (3 handlers)
-[GIN-debug] POST   /user                     --> bytedanceCamp/web/middlewares.Cors.func1 (3 handlers)
-2023-08-07T17:13:52.597+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:39	注册user-web服务成功: 127.0.0.1:8021
+[GIN-debug] GET    /user/detail              --> bytedanceCamp/web/api.GetUserInfo (4 handlers)
+[GIN-debug] POST   /user/register            --> bytedanceCamp/web/api.CreateUser (5 handlers)
+[GIN-debug] POST   /user/login               --> bytedanceCamp/web/api.LoginCheck (5 handlers)
+2023-08-08T10:03:16.326+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:39	注册user-web服务成功: 127.0.0.1:8021
 [GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
 Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
 [GIN-debug] Listening and serving HTTP on localhost:8021
-[GIN] 2023/08/07 - 17:13:56 | 200 |       1.329µs |       127.0.0.1 | GET      "/health"
-[GIN] 2023/08/07 - 17:14:01 | 200 |       2.299µs |       127.0.0.1 | GET      "/health"
-[GIN] 2023/08/07 - 17:14:06 | 200 |       2.464µs |       127.0.0.1 | GET      "/health"
-[GIN] 2023/08/07 - 17:14:11 | 200 |       2.226µs |       127.0.0.1 | GET      "/health"
-2023-08-07T17:14:15.288+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:68	注销feed-srv服务成功: 127.0.0.1:51603
-2023-08-07T17:14:15.291+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:55	注销user-web服务成功
-2023-08-07T17:14:15.292+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:62	注销user-srv服务成功: 127.0.0.1:51598
-2023/08/07 17:14:45 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
-2023-08-07T17:14:45.451+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:58	注册feed-srv服务成功: 127.0.0.1:51644
-2023/08/07 17:14:45 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
-2023-08-07T17:14:45.692+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:52	注册user-srv服务成功: 127.0.0.1:51648
+[GIN] 2023/08/08 - 10:03:18 | 200 |       1.871µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:03:19 | 200 |       3.489µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:03:23 | 200 |       1.844µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:03:24 | 200 |       1.996µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:03:28 | 200 |      29.645µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:03:29 | 200 |       1.771µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:03:33 | 200 |       1.764µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:03:34 | 200 |       1.556µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:03:38 | 200 |       1.349µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:03:39 | 200 |       1.451µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:03:43 | 200 |       1.875µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:03:44 | 200 |       1.665µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:03:48 | 200 |       1.899µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:03:49 | 200 |       1.537µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:03:53 | 200 |        1.62µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:03:54 | 200 |       1.527µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:03:58 | 200 |       1.521µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:03:59 | 200 |       2.431µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:04:03 | 200 |       1.691µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:04:04 | 200 |       2.276µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:04:06 | 401 |      57.056µs |       127.0.0.1 | POST     "/user/login"
+[GIN] 2023/08/08 - 10:04:08 | 200 |       2.338µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:04:09 | 401 |      27.819µs |       127.0.0.1 | POST     "/user/login"
+[GIN] 2023/08/08 - 10:04:09 | 200 |       1.548µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:04:13 | 200 |       2.115µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:04:14 | 200 |        1.66µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:04:18 | 200 |       2.332µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:04:19 | 200 |       1.922µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:04:23 | 200 |       1.568µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:04:24 | 200 |       1.338µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:04:28 | 200 |       2.458µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:04:29 | 200 |       1.507µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:04:33 | 200 |        1.82µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:04:34 | 200 |       1.667µs |       127.0.0.1 | GET      "/health"
+2023-08-08T10:04:37.694+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/feed/main.go:55	注销feed-web服务成功
+2023/08/08 10:04:37 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023/08/08 10:04:37 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023-08-08T10:04:37.696+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:62	注销user-srv服务成功: 127.0.0.1:65148
+2023/08/08 10:04:37 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023/08/08 10:04:37 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023-08-08T10:04:37.697+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:68	注销feed-srv服务成功: 127.0.0.1:65142
+2023/08/08 10:04:37 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023-08-08T10:04:37.699+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:55	注销user-web服务成功
+2023/08/08 10:04:37 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023/08/08 10:04:42 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023/08/08 10:04:42 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023-08-08T10:04:42.879+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:52	注册user-srv服务成功: 127.0.0.1:65289
+2023/08/08 10:04:43 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023-08-08T10:04:43.102+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:58	注册feed-srv服务成功: 127.0.0.1:65296
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /health                   --> bytedanceCamp/web/router.FeedRouter.func1 (3 handlers)
+[GIN-debug] GET    /feed/UserInfo            --> bytedanceCamp/web/middlewares.Cors.func1 (3 handlers)
+2023-08-08T10:04:43.474+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/feed/main.go:39	注册feed-web服务成功: 127.0.0.1:8022
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on localhost:8022
 [GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
 
 [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
@@ -192,8 +97,65 @@ Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-
  - using code:	gin.SetMode(gin.ReleaseMode)
 
 [GIN-debug] GET    /health                   --> bytedanceCamp/web/router.UserRouter.func1 (3 handlers)
-[GIN-debug] POST   /user                     --> bytedanceCamp/web/middlewares.Cors.func1 (3 handlers)
-2023-08-07T17:14:45.918+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:39	注册user-web服务成功: 127.0.0.1:8021
+[GIN-debug] POST   /user/register            --> bytedanceCamp/web/api.CreateUser (4 handlers)
+[GIN-debug] POST   /user/login               --> bytedanceCamp/web/api.LoginCheck (4 handlers)
+[GIN-debug] GET    /user/detail              --> bytedanceCamp/web/api.GetUserInfo (4 handlers)
+2023-08-08T10:04:43.884+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:39	注册user-web服务成功: 127.0.0.1:8021
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on localhost:8021
+
+2023/08/08 10:04:44 [32m/Users/yakult/Documents/code/GoLang/bytedanceCamp/service/user.go:83
+[0m[33m[2.698ms] [34;1m[rows:1][0m SELECT * FROM `user` WHERE `user`.`username` = 'hello world!' AND `user`.`deleted_at` IS NULL ORDER BY `user`.`id` LIMIT 1
+[GIN] 2023/08/08 - 10:04:44 | 200 |    4.854659ms |       127.0.0.1 | POST     "/user/login"
+
+2023/08/08 10:04:45 [32m/Users/yakult/Documents/code/GoLang/bytedanceCamp/service/user.go:83
+[0m[33m[0.589ms] [34;1m[rows:1][0m SELECT * FROM `user` WHERE `user`.`username` = 'hello world!' AND `user`.`deleted_at` IS NULL ORDER BY `user`.`id` LIMIT 1
+[GIN] 2023/08/08 - 10:04:45 | 200 |    1.250711ms |       127.0.0.1 | POST     "/user/login"
+[GIN] 2023/08/08 - 10:04:45 | 200 |       6.026µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:04:48 | 200 |       2.813µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:04:50 | 200 |       2.223µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:04:53 | 200 |       2.263µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:04:55 | 200 |       1.026µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:04:58 | 200 |       2.579µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:05:00 | 200 |       1.448µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:05:03 | 200 |       2.101µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:05:05 | 200 |       1.846µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:05:08 | 200 |       1.515µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:05:10 | 200 |       1.556µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:05:13 | 200 |       2.012µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:05:15 | 200 |       1.158µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:05:18 | 200 |        1.05µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:05:20 | 200 |       1.897µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:05:23 | 200 |       1.897µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:05:25 | 200 |       1.707µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:05:28 | 200 |       1.434µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:05:30 | 200 |       1.047µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:05:33 | 200 |       2.155µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:05:35 | 200 |       1.016µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:05:38 | 200 |       2.652µs |       127.0.0.1 | GET      "/health"
+2023-08-08T10:05:39.863+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:55	注销user-web服务成功
+2023-08-08T10:05:39.865+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/feed/main.go:55	注销feed-web服务成功
+2023-08-08T10:05:39.866+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:62	注销user-srv服务成功: 127.0.0.1:65289
+2023/08/08 10:05:39 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023-08-08T10:05:39.867+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:68	注销feed-srv服务成功: 127.0.0.1:65296
+2023/08/08 10:05:39 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023/08/08 10:05:45 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023/08/08 10:05:45 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023-08-08T10:05:45.491+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:52	注册user-srv服务成功: 127.0.0.1:65380
+2023/08/08 10:05:45 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023-08-08T10:05:45.867+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:58	注册feed-srv服务成功: 127.0.0.1:65387
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /health                   --> bytedanceCamp/web/router.UserRouter.func1 (3 handlers)
+[GIN-debug] GET    /user/detail              --> bytedanceCamp/web/middlewares.JWTAuth.func1 (5 handlers)
+[GIN-debug] POST   /user/register            --> bytedanceCamp/web/api.CreateUser (4 handlers)
+[GIN-debug] POST   /user/login               --> bytedanceCamp/web/api.LoginCheck (4 handlers)
+2023-08-08T10:05:46.251+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:39	注册user-web服务成功: 127.0.0.1:8021
 [GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
 Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
 [GIN-debug] Listening and serving HTTP on localhost:8021
@@ -204,16 +166,471 @@ Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-
  - using code:	gin.SetMode(gin.ReleaseMode)
 
 [GIN-debug] GET    /health                   --> bytedanceCamp/web/router.FeedRouter.func1 (3 handlers)
-[GIN-debug] POST   /feed                     --> bytedanceCamp/web/middlewares.Cors.func1 (3 handlers)
-2023-08-07T17:14:46.302+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/feed/main.go:39	注册feed-web服务成功: 127.0.0.1:8022
+[GIN-debug] GET    /feed/UserInfo            --> bytedanceCamp/web/middlewares.Cors.func1 (3 handlers)
+2023-08-08T10:05:46.641+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/feed/main.go:39	注册feed-web服务成功: 127.0.0.1:8022
 [GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
 Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
 [GIN-debug] Listening and serving HTTP on localhost:8022
-[GIN] 2023/08/07 - 17:14:47 | 200 |       2.074µs |       127.0.0.1 | GET      "/health"
-[GIN] 2023/08/07 - 17:14:48 | 200 |       2.322µs |       127.0.0.1 | GET      "/health"
-[GIN] 2023/08/07 - 17:14:52 | 200 |       2.158µs |       127.0.0.1 | GET      "/health"
-[GIN] 2023/08/07 - 17:14:53 | 200 |       2.369µs |       127.0.0.1 | GET      "/health"
-2023-08-07T17:14:56.696+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:55	注销user-web服务成功
-2023-08-07T17:14:56.697+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:68	注销feed-srv服务成功: 127.0.0.1:51644
-2023-08-07T17:14:56.698+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/feed/main.go:55	注销feed-web服务成功
-2023-08-07T17:14:56.699+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:62	注销user-srv服务成功: 127.0.0.1:51648
+
+2023/08/08 10:05:48 [32m/Users/yakult/Documents/code/GoLang/bytedanceCamp/service/user.go:83
+[0m[33m[1.991ms] [34;1m[rows:1][0m SELECT * FROM `user` WHERE `user`.`username` = 'hello world!' AND `user`.`deleted_at` IS NULL ORDER BY `user`.`id` LIMIT 1
+[GIN] 2023/08/08 - 10:05:48 | 200 |     3.54174ms |       127.0.0.1 | POST     "/user/login"
+[GIN] 2023/08/08 - 10:05:49 | 200 |       2.012µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:05:51 | 200 |       6.179µs |       127.0.0.1 | GET      "/health"
+
+2023/08/08 10:05:51 [32m/Users/yakult/Documents/code/GoLang/bytedanceCamp/service/user.go:83
+[0m[33m[0.537ms] [34;1m[rows:1][0m SELECT * FROM `user` WHERE `user`.`username` = 'hello world!' AND `user`.`deleted_at` IS NULL ORDER BY `user`.`id` LIMIT 1
+[GIN] 2023/08/08 - 10:05:51 | 200 |     1.01604ms |       127.0.0.1 | POST     "/user/login"
+[GIN] 2023/08/08 - 10:05:54 | 200 |       1.124µs |       127.0.0.1 | GET      "/health"
+
+2023/08/08 10:05:54 [32m/Users/yakult/Documents/code/GoLang/bytedanceCamp/service/user.go:107
+[0m[33m[0.587ms] [34;1m[rows:1][0m SELECT * FROM `user` WHERE `user`.`uuid` = 445243736461312 AND `user`.`deleted_at` IS NULL ORDER BY `user`.`id` LIMIT 1
+[GIN-debug] [WARNING] Headers were already written. Wanted to override status code 200 with 401
+[GIN] 2023/08/08 - 10:05:54 | 200 |    1.323911ms |       127.0.0.1 | GET      "/user/detail?user_id=445243736461312"
+[GIN] 2023/08/08 - 10:05:56 | 200 |       1.087µs |       127.0.0.1 | GET      "/health"
+
+2023/08/08 10:05:56 [32m/Users/yakult/Documents/code/GoLang/bytedanceCamp/service/user.go:107
+[0m[33m[0.465ms] [34;1m[rows:1][0m SELECT * FROM `user` WHERE `user`.`uuid` = 445243736461312 AND `user`.`deleted_at` IS NULL ORDER BY `user`.`id` LIMIT 1
+[GIN-debug] [WARNING] Headers were already written. Wanted to override status code 200 with 401
+[GIN] 2023/08/08 - 10:05:56 | 200 |     903.162µs |       127.0.0.1 | GET      "/user/detail?user_id=445243736461312"
+[GIN] 2023/08/08 - 10:05:59 | 200 |       1.712µs |       127.0.0.1 | GET      "/health"
+
+2023/08/08 10:05:59 [32m/Users/yakult/Documents/code/GoLang/bytedanceCamp/service/user.go:107
+[0m[33m[0.485ms] [34;1m[rows:1][0m SELECT * FROM `user` WHERE `user`.`uuid` = 445243736461312 AND `user`.`deleted_at` IS NULL ORDER BY `user`.`id` LIMIT 1
+[GIN-debug] [WARNING] Headers were already written. Wanted to override status code 200 with 401
+[GIN] 2023/08/08 - 10:05:59 | 200 |     964.082µs |       127.0.0.1 | GET      "/user/detail?user_id=445243736461312"
+[GIN] 2023/08/08 - 10:06:01 | 200 |       1.996µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:06:04 | 200 |       1.758µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:06:06 | 200 |       2.231µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:06:09 | 200 |       1.655µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:06:11 | 200 |       1.604µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:06:14 | 200 |       1.922µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:06:16 | 200 |       1.962µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:06:19 | 200 |       2.229µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:06:21 | 200 |       1.919µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:06:24 | 200 |       1.033µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:06:26 | 200 |       1.989µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:06:29 | 200 |       2.375µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:06:31 | 200 |       1.453µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:06:34 | 200 |        1.54µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:06:36 | 200 |       2.078µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:06:39 | 200 |         919ns |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:06:41 | 200 |       1.785µs |       127.0.0.1 | GET      "/health"
+2023-08-08T10:06:43.035+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/feed/main.go:55	注销feed-web服务成功
+2023-08-08T10:06:43.037+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:55	注销user-web服务成功
+2023-08-08T10:06:43.037+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:62	注销user-srv服务成功: 127.0.0.1:65380
+2023-08-08T10:06:43.038+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:68	注销feed-srv服务成功: 127.0.0.1:65387
+2023/08/08 10:06:47 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023/08/08 10:06:47 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023-08-08T10:06:47.972+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:58	注册feed-srv服务成功: 127.0.0.1:65483
+2023/08/08 10:06:48 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023-08-08T10:06:48.192+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:52	注册user-srv服务成功: 127.0.0.1:65492
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /health                   --> bytedanceCamp/web/router.FeedRouter.func1 (3 handlers)
+[GIN-debug] GET    /feed/UserInfo            --> bytedanceCamp/web/middlewares.Cors.func1 (3 handlers)
+2023-08-08T10:06:48.657+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/feed/main.go:39	注册feed-web服务成功: 127.0.0.1:8022
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on localhost:8022
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /health                   --> bytedanceCamp/web/router.UserRouter.func1 (3 handlers)
+[GIN-debug] GET    /user/detail              --> bytedanceCamp/web/api.GetUserInfo (5 handlers)
+[GIN-debug] POST   /user/register            --> bytedanceCamp/web/api.CreateUser (4 handlers)
+[GIN-debug] POST   /user/login               --> bytedanceCamp/web/api.LoginCheck (4 handlers)
+2023-08-08T10:06:49.029+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:39	注册user-web服务成功: 127.0.0.1:8021
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on localhost:8021
+[GIN] 2023/08/08 - 10:06:49 | 401 |      65.598µs |       127.0.0.1 | GET      "/user/detail?user_id=445243736461312"
+[GIN] 2023/08/08 - 10:06:49 | 200 |         907ns |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:06:50 | 401 |      77.959µs |       127.0.0.1 | GET      "/user/detail?user_id=445243736461312"
+[GIN] 2023/08/08 - 10:06:50 | 200 |        6.66µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:06:54 | 200 |       1.719µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:06:55 | 200 |       1.887µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:06:59 | 200 |       2.128µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:07:00 | 200 |       1.178µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:07:04 | 200 |       1.717µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:07:05 | 200 |       1.789µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:07:09 | 200 |       1.753µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:07:10 | 200 |       1.896µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:07:14 | 200 |       1.793µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:07:15 | 200 |       1.826µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:07:19 | 200 |       1.824µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:07:20 | 200 |        1.18µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:07:24 | 200 |       1.154µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:07:25 | 200 |       1.951µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:07:29 | 200 |       1.739µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:07:30 | 200 |        1.59µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:07:34 | 200 |       1.671µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:07:35 | 200 |        1.63µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:07:39 | 200 |       1.492µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:07:40 | 200 |       1.617µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:07:44 | 200 |       1.917µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:07:45 | 200 |       1.885µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:07:49 | 200 |       1.844µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:07:50 | 200 |       2.193µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:07:54 | 200 |       1.855µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:07:55 | 200 |       1.579µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:07:59 | 200 |       2.022µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:08:00 | 200 |       1.365µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:08:04 | 200 |       1.747µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:08:05 | 200 |       1.135µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:08:09 | 200 |       1.374µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:08:10 | 200 |       1.957µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:08:14 | 200 |         967ns |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:08:15 | 200 |       1.126µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:08:19 | 200 |       1.575µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:08:20 | 200 |         807ns |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:08:24 | 200 |         883ns |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:08:25 | 200 |       2.187µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:08:29 | 200 |         849ns |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:08:30 | 200 |       1.625µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:08:34 | 200 |       2.204µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:08:35 | 200 |       1.041µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:08:39 | 200 |         949ns |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:08:40 | 200 |       1.342µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:08:44 | 200 |        1.77µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:08:45 | 200 |       1.776µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:08:49 | 200 |       1.893µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:08:50 | 200 |       1.912µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:08:54 | 200 |       1.932µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:08:55 | 200 |       1.617µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:08:59 | 200 |         2.3µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:09:00 | 200 |        1.36µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:09:04 | 200 |         987ns |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:09:05 | 200 |       1.613µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:09:09 | 200 |       2.332µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:09:10 | 200 |       1.861µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:09:14 | 200 |        1.78µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:09:15 | 200 |        1.84µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:09:19 | 200 |       1.721µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:09:20 | 200 |       1.509µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:09:24 | 200 |       1.958µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:09:25 | 200 |       1.614µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:09:29 | 200 |       1.755µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:09:30 | 200 |       1.456µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:09:34 | 200 |       1.413µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:09:35 | 200 |         855ns |       127.0.0.1 | GET      "/health"
+
+2023/08/08 10:09:38 [32m/Users/yakult/Documents/code/GoLang/bytedanceCamp/service/user.go:83
+[0m[33m[3.858ms] [34;1m[rows:1][0m SELECT * FROM `user` WHERE `user`.`username` = 'hello world!' AND `user`.`deleted_at` IS NULL ORDER BY `user`.`id` LIMIT 1
+[GIN] 2023/08/08 - 10:09:38 | 200 |     6.07551ms |       127.0.0.1 | POST     "/user/login"
+[GIN] 2023/08/08 - 10:09:39 | 200 |       1.865µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:09:40 | 200 |       2.039µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:09:44 | 200 |       1.865µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:09:45 | 200 |       1.567µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:09:49 | 200 |       1.676µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:09:50 | 200 |       1.636µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:09:54 | 200 |       1.814µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:09:55 | 200 |       1.629µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:09:59 | 200 |       1.821µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:10:00 | 200 |       2.514µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:10:04 | 200 |       1.865µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:10:05 | 200 |       1.823µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:10:08 | 401 |      456.05µs |       127.0.0.1 | GET      "/user/detail?user_id=445243736461312"
+[GIN] 2023/08/08 - 10:10:09 | 200 |       2.072µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:10:10 | 401 |      298.96µs |       127.0.0.1 | GET      "/user/detail?user_id=445243736461312"
+[GIN] 2023/08/08 - 10:10:10 | 200 |       1.671µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:10:14 | 200 |       1.738µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:10:15 | 200 |       1.045µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:10:19 | 200 |       1.551µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:10:20 | 200 |       2.135µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:10:24 | 200 |       1.685µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:10:25 | 200 |       1.648µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:10:29 | 200 |       2.023µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:10:30 | 200 |       1.849µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:10:34 | 200 |       1.806µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:10:35 | 200 |       1.166µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:10:39 | 200 |       1.068µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:10:40 | 200 |       1.769µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:10:44 | 200 |        1.76µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:10:45 | 200 |       1.468µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:10:49 | 200 |       1.953µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:10:50 | 200 |       1.603µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:10:54 | 200 |       1.386µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:10:55 | 200 |       1.058µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:10:59 | 200 |       2.333µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:11:00 | 200 |       1.546µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:11:04 | 200 |         817ns |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:11:05 | 200 |         918ns |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:11:09 | 200 |       1.152µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:11:10 | 200 |       1.799µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:11:14 | 200 |       1.388µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:11:15 | 200 |       1.591µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:11:19 | 200 |       1.429µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:11:19 | 401 |      93.986µs |       127.0.0.1 | GET      "/user/detail?user_id=1477141598310400"
+[GIN] 2023/08/08 - 10:11:20 | 401 |      89.072µs |       127.0.0.1 | GET      "/user/detail?user_id=1477141598310400"
+[GIN] 2023/08/08 - 10:11:20 | 200 |       1.589µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:11:21 | 401 |       98.81µs |       127.0.0.1 | GET      "/user/detail?user_id=1477141598310400"
+[GIN] 2023/08/08 - 10:11:24 | 200 |       2.182µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:11:25 | 200 |       1.283µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:11:29 | 200 |       1.411µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:11:30 | 200 |         847ns |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:11:34 | 200 |       2.629µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:11:35 | 200 |       1.386µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:11:39 | 200 |       3.425µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:11:40 | 200 |       1.163µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:11:44 | 200 |       1.963µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:11:45 | 200 |       1.404µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:11:49 | 200 |       1.425µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:11:50 | 200 |       1.036µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:11:54 | 200 |        2.54µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:11:55 | 200 |       2.491µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:11:59 | 200 |       2.192µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:12:00 | 200 |       1.721µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:12:04 | 200 |        2.03µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:12:05 | 200 |       1.697µs |       127.0.0.1 | GET      "/health"
+2023/08/08 10:12:08 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023/08/08 10:12:08 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023/08/08 10:12:08 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023/08/08 10:12:08 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023/08/08 10:12:08 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023-08-08T10:12:08.842+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:68	注销feed-srv服务成功: 127.0.0.1:65483
+2023/08/08 10:12:08 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023-08-08T10:12:08.844+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:55	注销user-web服务成功
+2023/08/08 10:12:08 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023/08/08 10:12:08 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023/08/08 10:12:08 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023-08-08T10:12:08.846+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:62	注销user-srv服务成功: 127.0.0.1:65492
+2023-08-08T10:12:08.847+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/feed/main.go:55	注销feed-web服务成功
+2023/08/08 10:12:15 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023/08/08 10:12:15 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023-08-08T10:12:15.163+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:58	注册feed-srv服务成功: 127.0.0.1:49753
+2023/08/08 10:12:15 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023-08-08T10:12:15.577+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:52	注册user-srv服务成功: 127.0.0.1:49759
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /health                   --> bytedanceCamp/web/router.UserRouter.func1 (3 handlers)
+[GIN-debug] GET    /user/detail              --> bytedanceCamp/web/api.GetUserInfo (5 handlers)
+[GIN-debug] POST   /user/register            --> bytedanceCamp/web/api.CreateUser (4 handlers)
+[GIN-debug] POST   /user/login               --> bytedanceCamp/web/api.LoginCheck (4 handlers)
+2023-08-08T10:12:15.953+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:39	注册user-web服务成功: 127.0.0.1:8021
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on localhost:8021
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /health                   --> bytedanceCamp/web/router.FeedRouter.func1 (3 handlers)
+[GIN-debug] GET    /feed/UserInfo            --> bytedanceCamp/web/middlewares.Cors.func1 (3 handlers)
+2023-08-08T10:12:16.356+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/feed/main.go:39	注册feed-web服务成功: 127.0.0.1:8022
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on localhost:8022
+[GIN] 2023/08/08 - 10:12:17 | 200 |       8.389µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:12:19 | 401 |     191.473µs |       127.0.0.1 | GET      "/user/detail?user_id=1477141598310400"
+[GIN] 2023/08/08 - 10:12:19 | 200 |        1.16µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:12:22 | 200 |       1.633µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:12:23 | 401 |      66.742µs |       127.0.0.1 | GET      "/user/detail?user_id=1477141598310400"
+[GIN] 2023/08/08 - 10:12:24 | 401 |      64.671µs |       127.0.0.1 | GET      "/user/detail?user_id=1477141598310400"
+[GIN] 2023/08/08 - 10:12:25 | 200 |       1.673µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:12:27 | 200 |         803ns |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:12:30 | 200 |       1.165µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:12:32 | 200 |       1.195µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:12:35 | 200 |       1.843µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:12:37 | 200 |        1.92µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:12:40 | 200 |       1.877µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:12:42 | 200 |       1.056µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:12:45 | 200 |       2.037µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:12:47 | 200 |       1.724µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:12:50 | 200 |       1.713µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:12:52 | 200 |       1.506µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:12:55 | 200 |       1.913µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:12:57 | 200 |       2.004µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:13:00 | 200 |        1.01µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:13:02 | 200 |       1.736µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:13:05 | 200 |       1.937µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:13:07 | 200 |       1.023µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:13:10 | 200 |       1.559µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:13:12 | 200 |       1.859µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:13:15 | 200 |       1.697µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:13:17 | 200 |       1.006µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:13:20 | 200 |       1.809µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:13:22 | 200 |         997ns |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:13:25 | 200 |       1.786µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:13:27 | 200 |       1.487µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:13:30 | 200 |        1.73µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:13:32 | 200 |       2.258µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:13:35 | 200 |       2.218µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:13:37 | 200 |       1.127µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:13:40 | 200 |         803ns |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:13:42 | 200 |       1.693µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:13:45 | 200 |       1.819µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:13:47 | 200 |       1.115µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:13:50 | 200 |        1.73µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:13:52 | 200 |       1.058µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:13:55 | 200 |       1.233µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:13:57 | 200 |       1.293µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:14:00 | 200 |       1.125µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:14:02 | 200 |       1.435µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:14:05 | 200 |       1.345µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:14:07 | 200 |         1.5µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:14:10 | 200 |         950ns |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:14:12 | 200 |       2.198µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:14:15 | 200 |       1.273µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:14:17 | 200 |       1.586µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:14:20 | 200 |       1.138µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:14:22 | 200 |       1.781µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:14:25 | 200 |       2.398µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:14:27 | 200 |       1.828µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:14:30 | 200 |         850ns |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:14:32 | 200 |         904ns |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:14:35 | 200 |       1.878µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:14:37 | 200 |       3.723µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:14:40 | 200 |       1.424µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:14:42 | 200 |       1.521µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:14:45 | 200 |       1.686µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:14:47 | 200 |       1.537µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:14:50 | 200 |       1.132µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:14:52 | 200 |        1.51µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:14:55 | 200 |       1.292µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:14:57 | 200 |       1.127µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:15:00 | 200 |       1.219µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:15:02 | 200 |       1.095µs |       127.0.0.1 | GET      "/health"
+2023/08/08 10:15:04 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023/08/08 10:15:04 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023/08/08 10:15:04 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023/08/08 10:15:04 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023-08-08T10:15:04.809+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:68	注销feed-srv服务成功: 127.0.0.1:49753
+2023/08/08 10:15:04 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023/08/08 10:15:04 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023-08-08T10:15:04.812+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/feed/main.go:55	注销feed-web服务成功
+2023/08/08 10:15:04 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023/08/08 10:15:04 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023/08/08 10:15:04 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023-08-08T10:15:04.814+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:62	注销user-srv服务成功: 127.0.0.1:49759
+2023/08/08 10:15:04 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023/08/08 10:15:04 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023-08-08T10:15:04.815+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:55	注销user-web服务成功
+2023/08/08 10:15:10 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023/08/08 10:15:10 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023-08-08T10:15:10.096+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:52	注册user-srv服务成功: 127.0.0.1:50203
+2023/08/08 10:15:10 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023-08-08T10:15:10.476+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:58	注册feed-srv服务成功: 127.0.0.1:50209
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /health                   --> bytedanceCamp/web/router.FeedRouter.func1 (3 handlers)
+[GIN-debug] GET    /feed/UserInfo            --> bytedanceCamp/web/middlewares.Cors.func1 (3 handlers)
+2023-08-08T10:15:10.940+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/feed/main.go:39	注册feed-web服务成功: 127.0.0.1:8022
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on localhost:8022
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /health                   --> bytedanceCamp/web/router.UserRouter.func1 (3 handlers)
+[GIN-debug] GET    /user/detail              --> bytedanceCamp/web/api.GetUserInfo (5 handlers)
+[GIN-debug] POST   /user/register            --> bytedanceCamp/web/api.CreateUser (4 handlers)
+[GIN-debug] POST   /user/login               --> bytedanceCamp/web/api.LoginCheck (4 handlers)
+2023-08-08T10:15:11.326+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:39	注册user-web服务成功: 127.0.0.1:8021
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on localhost:8021
+[GIN] 2023/08/08 - 10:15:14 | 200 |       1.796µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:15:15 | 200 |       4.826µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:15:19 | 200 |       1.044µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:15:20 | 200 |       1.634µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:15:24 | 200 |       2.038µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:15:25 | 200 |       1.781µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:15:29 | 200 |       1.797µs |       127.0.0.1 | GET      "/health"
+
+2023/08/08 10:15:29 [32m/Users/yakult/Documents/code/GoLang/bytedanceCamp/service/user.go:41
+[0m[33m[3.862ms] [34;1m[rows:1][0m SELECT * FROM `user` WHERE `user`.`username` = 'hello world!' AND `user`.`deleted_at` IS NULL ORDER BY `user`.`id` LIMIT 1
+2023-08-08T10:15:29.531+0800	error	/Users/yakult/Documents/code/GoLang/bytedanceCamp/web/api/user.go:53	注册用户出错: rpc error: code = AlreadyExists desc = 用户已存在
+[GIN] 2023/08/08 - 10:15:29 | 500 |    6.409183ms |       127.0.0.1 | POST     "/user/register"
+[GIN] 2023/08/08 - 10:15:30 | 200 |       1.937µs |       127.0.0.1 | GET      "/health"
+
+2023/08/08 10:15:32 [32m/Users/yakult/Documents/code/GoLang/bytedanceCamp/service/user.go:41
+[0m[33m[0.762ms] [34;1m[rows:1][0m SELECT * FROM `user` WHERE `user`.`username` = 'hello world!' AND `user`.`deleted_at` IS NULL ORDER BY `user`.`id` LIMIT 1
+2023-08-08T10:15:32.032+0800	error	/Users/yakult/Documents/code/GoLang/bytedanceCamp/web/api/user.go:53	注册用户出错: rpc error: code = AlreadyExists desc = 用户已存在
+[GIN] 2023/08/08 - 10:15:32 | 500 |     1.79495ms |       127.0.0.1 | POST     "/user/register"
+[GIN] 2023/08/08 - 10:15:34 | 200 |       1.765µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:15:35 | 200 |       2.258µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:15:39 | 200 |       3.358µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:15:40 | 200 |       1.921µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:15:44 | 200 |       1.525µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:15:45 | 200 |       1.398µs |       127.0.0.1 | GET      "/health"
+
+2023/08/08 10:15:47 [31;1m/Users/yakult/Documents/code/GoLang/bytedanceCamp/service/user.go:41 [35;1mrecord not found
+[0m[33m[0.581ms] [34;1m[rows:0][0m SELECT * FROM `user` WHERE `user`.`username` = 'hello world!' AND `user`.`deleted_at` IS NULL ORDER BY `user`.`id` LIMIT 1
+
+2023/08/08 10:15:47 [32m/Users/yakult/Documents/code/GoLang/bytedanceCamp/service/user.go:68
+[0m[33m[5.409ms] [34;1m[rows:1][0m INSERT INTO `user` (`uuid`,`username`,`password`,`jwt_token`,`avatar`,`followers`,`followings`,`signature`,`total_favorite`,`work_count`,`favorite_count`,`created_at`,`updated_at`,`deleted_at`) VALUES (1483724159979520,'hello world!','$pbkdf2-sha512$JQmbUFB3AOWcCHgv$b599dd160ca6aea62e87e2663b55402407e4c9a8fefa286ac2c558f32b827009','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVdWlkIjoxNDgzNzI0MTU5OTc5NTIwLCJVc2VyTmFtZSI6ImhlbGxvIHdvcmxkISIsImlzcyI6Illha3VsdCIsImV4cCI6MTY5NDA1Mjk0NywibmJmIjoxNjkxNDYwOTQ3fQ.l9LeUw9DJxVkjuG6Zgk-2JUvUkw74eFGn8s-AgDgefo','',0,0,'',0,0,0,'2023-08-08 10:15:47.408','2023-08-08 10:15:47.408',NULL)
+[GIN] 2023/08/08 - 10:15:47 | 200 |    8.108362ms |       127.0.0.1 | POST     "/user/register"
+[GIN] 2023/08/08 - 10:15:49 | 200 |       1.012µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:15:50 | 200 |       4.092µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:15:54 | 200 |       1.455µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:15:55 | 200 |       2.237µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:15:59 | 200 |       1.555µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:16:00 | 200 |       2.448µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:16:04 | 200 |       1.979µs |       127.0.0.1 | GET      "/health"
+
+2023/08/08 10:16:04 [31;1m/Users/yakult/Documents/code/GoLang/bytedanceCamp/service/user.go:41 [35;1mrecord not found
+[0m[33m[3.322ms] [34;1m[rows:0][0m SELECT * FROM `user` WHERE `user`.`username` = 'Yakult' AND `user`.`deleted_at` IS NULL ORDER BY `user`.`id` LIMIT 1
+
+2023/08/08 10:16:04 [32m/Users/yakult/Documents/code/GoLang/bytedanceCamp/service/user.go:68
+[0m[33m[7.650ms] [34;1m[rows:1][0m INSERT INTO `user` (`uuid`,`username`,`password`,`jwt_token`,`avatar`,`followers`,`followings`,`signature`,`total_favorite`,`work_count`,`favorite_count`,`created_at`,`updated_at`,`deleted_at`) VALUES (1483795094048768,'Yakult','$pbkdf2-sha512$Yj9faIIoaFPuGe8l$c5c200d0a73d6e51ee868c12dbd9db70841f0463198fafc43fbc36e56f5a9d3c','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVdWlkIjoxNDgzNzk1MDk0MDQ4NzY4LCJVc2VyTmFtZSI6Illha3VsdCIsImlzcyI6Illha3VsdCIsImV4cCI6MTY5NDA1Mjk2NCwibmJmIjoxNjkxNDYwOTY0fQ.A0j--iBETtP6RVwctUzyku3-3X-pNoVQOEVIoFuJNDo','',0,0,'',0,0,0,'2023-08-08 10:16:04.32','2023-08-08 10:16:04.32',NULL)
+[GIN] 2023/08/08 - 10:16:04 | 200 |   12.679665ms |       127.0.0.1 | POST     "/user/register"
+[GIN] 2023/08/08 - 10:16:05 | 200 |       2.612µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:16:09 | 200 |        1.95µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:16:10 | 200 |       3.064µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:16:14 | 200 |       1.958µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:16:15 | 200 |       1.322µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:16:19 | 200 |       1.396µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:16:20 | 200 |       2.247µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:16:24 | 200 |       2.259µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:16:25 | 200 |       3.358µs |       127.0.0.1 | GET      "/health"
+
+2023/08/08 10:16:25 [32m/Users/yakult/Documents/code/GoLang/bytedanceCamp/service/user.go:107
+[0m[33m[0.552ms] [34;1m[rows:1][0m SELECT * FROM `user` WHERE `user`.`uuid` = 1483795094048768 AND `user`.`deleted_at` IS NULL ORDER BY `user`.`id` LIMIT 1
+[GIN] 2023/08/08 - 10:16:25 | 200 |    1.570243ms |       127.0.0.1 | GET      "/user/detail?user_id=1483795094048768"
+[GIN] 2023/08/08 - 10:16:29 | 200 |       1.353µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:16:30 | 200 |       2.276µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:16:34 | 200 |       1.908µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:16:35 | 200 |       3.043µs |       127.0.0.1 | GET      "/health"
+
+2023/08/08 10:16:35 [32m/Users/yakult/Documents/code/GoLang/bytedanceCamp/service/user.go:83
+[0m[33m[1.664ms] [34;1m[rows:1][0m SELECT * FROM `user` WHERE `user`.`username` = 'hello world!' AND `user`.`deleted_at` IS NULL ORDER BY `user`.`id` LIMIT 1
+[GIN] 2023/08/08 - 10:16:35 | 200 |    2.986924ms |       127.0.0.1 | POST     "/user/login"
+[GIN] 2023/08/08 - 10:16:39 | 200 |       1.715µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:16:40 | 200 |       1.354µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:16:44 | 200 |       1.135µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:16:45 | 200 |       1.736µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:16:49 | 200 |       1.935µs |       127.0.0.1 | GET      "/health"
+[GIN] 2023/08/08 - 10:16:50 | 200 |       1.036µs |       127.0.0.1 | GET      "/health"
+2023/08/08 10:16:51 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023/08/08 10:16:51 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023/08/08 10:16:51 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023-08-08T10:16:51.407+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:62	注销user-srv服务成功: 127.0.0.1:50203
+2023/08/08 10:16:51 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023/08/08 10:16:51 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023/08/08 10:16:51 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023-08-08T10:16:51.416+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/feed/main.go:55	注销feed-web服务成功
+2023-08-08T10:16:51.417+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:55	注销user-web服务成功
+2023-08-08T10:16:51.420+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:68	注销feed-srv服务成功: 127.0.0.1:50209
+2023/08/08 10:16:51 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}
+2023/08/08 10:16:51 ERROR: [Consul resolver] Couldn't update client connection. error={bad resolver state}

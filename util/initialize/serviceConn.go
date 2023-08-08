@@ -17,6 +17,7 @@ import (
 )
 
 func initSrvConn() {
+	// 连接user-srv
 	userConn, err := grpc.Dial(
 		fmt.Sprintf("consul://%s:%d/%s?wait=14s",
 			global.ProjectConfig.Consul.Host,
@@ -30,4 +31,18 @@ func initSrvConn() {
 		return
 	}
 	global.UserSrvClient = douyin_core.NewUserClient(userConn)
+	// 连接feed-srv
+	feedConn, err := grpc.Dial(
+		fmt.Sprintf("consul://%s:%d/%s?wait=14s",
+			global.ProjectConfig.Consul.Host,
+			global.ProjectConfig.Consul.Port,
+			global.ProjectConfig.ConsulService.Feed.Name),
+		grpc.WithTransportCredentials(insecure.NewCredentials()),
+		grpc.WithDefaultServiceConfig(`{"loadBalancingPolicy": "round_robin"}`),
+	)
+	if err != nil {
+		zap.S().Error("[InitSrvConn] 连接 [feed-srv失败]", err.Error())
+		return
+	}
+	global.FeedSrvClient = douyin_core.NewFeedClient(feedConn)
 }
