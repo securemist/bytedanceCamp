@@ -153,3 +153,15 @@
 2023-08-08T10:16:51.416+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/feed/main.go:55	注销feed-web服务成功
 2023-08-08T10:16:51.417+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:55	注销user-web服务成功
 2023-08-08T10:16:51.420+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:68	注销feed-srv服务成功: 127.0.0.1:50209
+2023-08-08T10:20:49.075+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:58	注册feed-srv服务成功: 127.0.0.1:50467
+2023-08-08T10:20:49.443+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:52	注册user-srv服务成功: 127.0.0.1:50473
+2023-08-08T10:20:49.837+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:39	注册user-web服务成功: 127.0.0.1:8021
+2023-08-08T10:20:50.214+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/feed/main.go:39	注册feed-web服务成功: 127.0.0.1:8022
+2023-08-08T10:21:37.142+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/feed/main.go:55	注销feed-web服务成功
+2023-08-08T10:21:37.145+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:68	注销feed-srv服务成功: 127.0.0.1:50467
+2023-08-08T10:21:37.146+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:55	注销user-web服务成功
+2023-08-08T10:21:37.148+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:62	注销user-srv服务成功: 127.0.0.1:50473
+2023-08-08T10:21:41.776+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:52	注册user-srv服务成功: 127.0.0.1:50550
+2023-08-08T10:21:41.975+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/feed/main.go:39	注册feed-web服务成功: 127.0.0.1:8022
+2023-08-08T10:21:42.241+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:58	注册feed-srv服务成功: 127.0.0.1:50561
+2023-08-08T10:21:42.446+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:39	注册user-web服务成功: 127.0.0.1:8021
