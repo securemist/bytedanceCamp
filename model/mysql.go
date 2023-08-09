@@ -8,8 +8,9 @@ package model
 
 import "gorm.io/gorm"
 
+// 用户信息
 type User struct {
-	Uuid          int64  `json:"uuid,omitempty" gorm:"type:bigint;not null;unique;comment:用户id"`
+	Uuid          int64  `json:"uuid" gorm:"type:bigint;not null;unique;comment:用户id"`
 	UserName      string `json:"username" binding:"required,max=32" gorm:"type:varchar(32);column:username;not null;unique;comment:用户名"`
 	Password      string `json:"password" binding:"required,max=32" gorm:"type:varchar(100);not null;comment:登录密码"`
 	JwtToken      string `json:"jwt_token" gorm:"type:varchar(250);not null;comment:用户鉴权token"`
@@ -23,6 +24,7 @@ type User struct {
 	gorm.Model
 }
 
+// 视频信息
 type Video struct {
 	Uuid          int64  `json:"uuid" gorm:"type:bigint;not null;unique;comment:视频id"`
 	AuthorId      int64  `json:"author_id" gorm:"type:bigint;not null;comment:视频作者id"`
@@ -32,4 +34,31 @@ type Video struct {
 	PlayUrl       string `json:"play_url" gorm:"type:varchar(200);not null;comment:视频播放地址"`
 	CoverUrl      string `json:"cover_url" gorm:"type:varchar(200);not null;comment:视频封面地址"`
 	gorm.Model
+}
+
+// 用户对视频的评论（可以有多条评论）
+type Comment struct {
+	// 根据user_id和video_id建立联合索引
+	UserId  int64  `json:"user_id" gorm:"type:bigint;not null;index:idx_user_video;comment:评论者id"`
+	VideoId int64  `json:"video_id" gorm:"type:bigint;not null;index:idx_user_video;comment:视频id"`
+	Content string `json:"content" gorm:"type:varchar(200);not null;comment:评论内容"`
+	User    User   `gorm:"foreignKey:UserId;references:Uuid"`
+	Video   Video  `gorm:"foreignKey:VideoId;references:Uuid"`
+	gorm.Model
+}
+
+// 用户对视频点赞
+type Favorite struct {
+	// 根据user_id和video_id建立联合索引
+	UserId     int64 `json:"user_id" gorm:"type:bigint;not null;index:idx_user_video;comment:评论者id"`
+	VideoId    int64 `json:"video_id" gorm:"type:bigint;not null;index:idx_user_video;comment:视频id"`
+	IsFavorite bool  `json:"is_favorite" gorm:"type:bool;not null;comment:用户是否点赞视频"`
+	User       User  `gorm:"foreignKey:UserId;references:Uuid"`
+	Video      Video `gorm:"foreignKey:VideoId;references:Uuid"`
+	gorm.Model
+}
+
+type VideoData struct {
+	Data  string `json:"data"`
+	Title string `json:"title"`
 }

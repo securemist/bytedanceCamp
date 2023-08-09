@@ -8,15 +8,18 @@ package service
 
 import (
 	"bytedanceCamp/model/proto/douyin_core"
+	"bytedanceCamp/util/initialize"
 	"context"
 	"testing"
+	"time"
 )
 
 func TestPublishVideo(t *testing.T) {
+	initialize.Init()
 	req := &douyin_core.PublishVideoRequest{
 		Data:   []byte("hello Gopher!"),
-		Title:  "投稿测试2",
-		UserId: 445243736461312,
+		Title:  "投稿测试1",
+		UserId: 1533847262990336,
 	}
 	f := FeedServer{}
 	res, err := f.PublishVideo(context.Background(), req)
@@ -27,8 +30,10 @@ func TestPublishVideo(t *testing.T) {
 }
 
 func TestGetFeed(t *testing.T) {
+	initialize.Init()
+	tie := time.Now().Unix()
 	req := &douyin_core.FeedRequest{
-		LatestTime: nil,
+		LatestTime: &tie,
 	}
 	f := FeedServer{}
 	res, err := f.GetFeed(context.Background(), req)
@@ -39,8 +44,9 @@ func TestGetFeed(t *testing.T) {
 }
 
 func TestPublishList(t *testing.T) {
+	initialize.Init()
 	req := &douyin_core.PublishListRequest{
-		UserId: 445243736461312,
+		UserId: 1533847262990336,
 	}
 	f := FeedServer{}
 	res, err := f.PublishList(context.Background(), req)

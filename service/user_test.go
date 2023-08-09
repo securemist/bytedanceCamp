@@ -14,6 +14,7 @@ import (
 )
 
 func TestCreateUser(t *testing.T) {
+	initialize.Init()
 	req := &douyin_core.UserRegisterRequest{
 		Username: "Yakult",
 		Password: "123456",
@@ -40,7 +41,7 @@ func TestLoginCheck(t *testing.T) {
 
 func TestGetUserInfo(t *testing.T) {
 	initialize.Init()
-	req := &douyin_core.UserInfoRequest{UserId: 445243736461312}
+	req := &douyin_core.UserInfoRequest{UserId: 1533847262990336}
 	u := UserServer{}
 	res, err := u.GetUserInfo(context.Background(), req)
 	if err != nil {

@@ -40,12 +40,16 @@ type ConsulConfig struct {
 	Port int    `mapstructure:"port"`
 }
 type ConsulServiceConfig struct {
-	User ConsulServiceCommon `mapstructure:"user"`
-	Feed ConsulServiceCommon `mapstructure:"feed"`
+	User     ConsulServiceCommon `mapstructure:"user"`
+	Feed     ConsulServiceCommon `mapstructure:"feed"`
+	Favorite ConsulServiceCommon `mapstructure:"favorite"`
+	Comment  ConsulServiceCommon `mapstructure:"comment"`
 }
 type ConsulWebConfig struct {
-	User ConsulWebCommon `mapstructure:"user"`
-	Feed ConsulWebCommon `mapstructure:"feed"`
+	User     ConsulWebCommon `mapstructure:"user"`
+	Feed     ConsulWebCommon `mapstructure:"feed"`
+	Favorite ConsulWebCommon `mapstructure:"favorite"`
+	Comment  ConsulWebCommon `mapstructure:"comment"`
 }
 type ConsulServiceCommon struct {
 	Name string   `mapstructure:"name"`

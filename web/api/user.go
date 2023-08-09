@@ -39,7 +39,7 @@ func GetUserInfo(ctx *gin.Context) {
 func CreateUser(ctx *gin.Context) {
 	registerForm := model.User{}
 	if err := ctx.ShouldBind(&registerForm); err != nil {
-		zap.S().Errorf("注册用户出错: %s", err)
+		zap.S().Errorf("注册用户出错: %s", err.Error())
 		ctx.JSON(http.StatusInternalServerError, gin.H{
 			"msg": err.Error(),
 		})
@@ -65,7 +65,7 @@ func CreateUser(ctx *gin.Context) {
 func LoginCheck(ctx *gin.Context) {
 	loginForm := model.User{}
 	if err := ctx.ShouldBind(&loginForm); err != nil {
-		zap.S().Errorf("登录失败: %s", err)
+		zap.S().Errorf("登录失败: %s", err.Error())
 		ctx.JSON(http.StatusInternalServerError, gin.H{
 			"msg": err.Error(),
 		})
@@ -76,7 +76,7 @@ func LoginCheck(ctx *gin.Context) {
 		Password: loginForm.Password,
 	})
 	if err != nil {
-		zap.S().Errorf("登录失败: %s", err)
+		zap.S().Errorf("登录失败: %s", err.Error())
 		ctx.JSON(http.StatusInternalServerError, gin.H{
 			"msg": err.Error(),
 		})

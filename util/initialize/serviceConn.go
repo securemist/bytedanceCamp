@@ -9,6 +9,7 @@ package initialize
 import (
 	"bytedanceCamp/dao/global"
 	"bytedanceCamp/model/proto/douyin_core"
+	"bytedanceCamp/model/proto/douyin_extra_first"
 	"fmt"
 	_ "github.com/mbobakov/grpc-consul-resolver" // 这行代码很重要
 	"go.uber.org/zap"
@@ -27,7 +28,7 @@ func initSrvConn() {
 		grpc.WithDefaultServiceConfig(`{"loadBalancingPolicy": "round_robin"}`),
 	)
 	if err != nil {
-		zap.S().Error("[InitSrvConn] 连接 [use-srv失败]", err.Error())
+		zap.S().Errorf("[InitSrvConn] 连接 [%s失败]: %s", global.ProjectConfig.ConsulService.User.Name, err.Error())
 		return
 	}
 	global.UserSrvClient = douyin_core.NewUserClient(userConn)
@@ -41,8 +42,36 @@ func initSrvConn() {
 		grpc.WithDefaultServiceConfig(`{"loadBalancingPolicy": "round_robin"}`),
 	)
 	if err != nil {
-		zap.S().Error("[InitSrvConn] 连接 [feed-srv失败]", err.Error())
+		zap.S().Errorf("[InitSrvConn] 连接 [%s失败]: %s", global.ProjectConfig.ConsulService.Feed.Name, err.Error())
 		return
 	}
 	global.FeedSrvClient = douyin_core.NewFeedClient(feedConn)
+	// 连接favorite-srv
+	favoriteConn, err := grpc.Dial(
+		fmt.Sprintf("consul://%s:%d/%s?wait=14s",
+			global.ProjectConfig.Consul.Host,
+			global.ProjectConfig.Consul.Port,
+			global.ProjectConfig.ConsulService.Favorite.Name),
+		grpc.WithTransportCredentials(insecure.NewCredentials()),
+		grpc.WithDefaultServiceConfig(`{"loadBalancingPolicy": "round_robin"}`),
+	)
+	if err != nil {
+		zap.S().Errorf("[InitSrvConn] 连接 [%s失败]: %s", global.ProjectConfig.ConsulService.Favorite.Name, err.Error())
+		return
+	}
+	global.FavoriteSrvClient = douyin_extra_first.NewFavoriteClient(favoriteConn)
+	// 连接comment-srv
+	commentConn, err := grpc.Dial(
+		fmt.Sprintf("consul://%s:%d/%s?wait=14s",
+			global.ProjectConfig.Consul.Host,
+			global.ProjectConfig.Consul.Port,
+			global.ProjectConfig.ConsulService.Comment.Name),
+		grpc.WithTransportCredentials(insecure.NewCredentials()),
+		grpc.WithDefaultServiceConfig(`{"loadBalancingPolicy": "round_robin"}`),
+	)
+	if err != nil {
+		zap.S().Errorf("[InitSrvConn] 连接 [%s失败]: %s", global.ProjectConfig.ConsulService.Comment.Name, err.Error())
+		return
+	}
+	global.CommentSrvClient = douyin_extra_first.NewCommentClient(commentConn)
 }

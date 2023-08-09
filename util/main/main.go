@@ -8,8 +8,10 @@ package main
 import (
 	"bytedanceCamp/dao/global"
 	"bytedanceCamp/model"
+	"bytedanceCamp/util/initialize"
 )
 
 func main() {
-	global.MysqlDB.AutoMigrate(&model.Video{})
+	initialize.Init()
+	global.MysqlDB.AutoMigrate(&model.Comment{}, &model.Favorite{})
 }

@@ -24,12 +24,9 @@ type FeedServer struct {
 
 // GetFeed 视频流接口
 func (f *FeedServer) GetFeed(ctx context.Context, req *douyin_core.FeedRequest) (*douyin_core.FeedResponse, error) {
-	if req.LatestTime == nil {
-		nowTime := time.Now().Unix()
-		req.LatestTime = &nowTime
-	}
 	var videos []model.Video
-	result := global.MysqlDB.Order("created_at desc").Limit(30).Find(&videos)
+	t := time.Unix(*req.LatestTime, 0)
+	result := global.MysqlDB.Order("created_at desc").Where("created_at < ?", t).Limit(30).Find(&videos)
 	if result.Error != nil {
 		zap.S().Errorf("获取视频流失败: %s", result.Error)
 		return nil, status.Errorf(codes.Internal, "获取视频流失败: %s", result.Error)
@@ -65,7 +62,7 @@ func (f *FeedServer) GetFeed(ctx context.Context, req *douyin_core.FeedRequest) 
 
 // PublishVideo 投稿视频
 func (f *FeedServer) PublishVideo(ctx context.Context, req *douyin_core.PublishVideoRequest) (*douyin_core.PublishVideoResponse, error) {
-	//TODO 要叫视频数据存储到一个服务器上，得到一个url地址，这里随便给一个
+	//TODO 要将视频数据存储到一个服务器上，得到一个url地址，这里随便给一个
 	video := model.Video{
 		Uuid:     util.GenID(),
 		AuthorId: req.UserId,

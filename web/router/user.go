@@ -23,8 +23,7 @@ func UserRouter() *gin.Engine {
 	router.Use(middlewares.Cors())
 	userRouter := router.Group("user")
 	{
-		//TODO 还没开始写路由，先占个位
-		userRouter.GET("detail", middlewares.JWTAuth(), api.GetUserInfo)
+		userRouter.GET("", middlewares.JWTAuth(), api.GetUserInfo)
 		userRouter.POST("register", api.CreateUser)
 		userRouter.POST("login", api.LoginCheck)
 	}

@@ -3,6 +3,7 @@ package middlewares
 import (
 	"bytedanceCamp/dao/global"
 	"errors"
+	"go.uber.org/zap"
 	"net/http"
 
 	"github.com/golang-jwt/jwt/v5"
@@ -37,6 +38,7 @@ func JWTAuth() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		token := c.Request.Header.Get("x-token")
 		if token == "" {
+			zap.S().Error("请先登录")
 			c.JSON(http.StatusUnauthorized, gin.H{
 				"msg": "请先登录",
 			})
@@ -48,6 +50,7 @@ func JWTAuth() gin.HandlerFunc {
 		claims, err := j.ParseToken(token)
 		if err != nil {
 			if err == TokenExpired {
+				zap.S().Error("授权已过期")
 				c.JSON(http.StatusUnauthorized, gin.H{
 					"msg": "授权已过期",
 				})
