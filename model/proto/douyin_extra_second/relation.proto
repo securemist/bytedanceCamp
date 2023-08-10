@@ -1,0 +1,60 @@
+// protoc -I . relation.proto --go_out=. --go-grpc_out=.
+syntax = "proto3";
+option go_package = ".;douyin_extra_second";
+package douyin.extra.second;
+service Relation{
+  rpc RelationAction(RelationActionRequest) returns (RelationActionResponse); // 关注操作
+  rpc RelationFollowList(RelationFollowListRequest) returns (RelationFollowListResponse); // 关注列表
+  rpc RelationFansList(RelationFansListRequest) returns (RelationFansListResponse); // 粉丝列表
+  rpc RelationAddFriend(RelationAddFriendRequest) returns (RelationAddFriendResponse); // 添加好友
+  rpc RelationFriendList(RelationFriendListRequest) returns (RelationFriendListResponse); // 好友列表
+}
+message RelationActionRequest {
+  int64 user_id = 1; // 用户id
+  int64 to_user_id = 2; // 对方用户id
+  int32 action_type = 3; // 1-关注，2-取消关注
+}
+
+message RelationActionResponse {
+  int32 status_code = 1; // 状态码，0-成功，其他值-失败
+  optional string status_msg = 2; // 返回状态描述
+}
+// 关注列表
+message RelationFollowListRequest {
+  int64 user_id = 1; // 用户id
+}
+
+message RelationFollowListResponse {
+  int32 status_code = 1; // 状态码，0-成功，其他值-失败
+  optional string status_msg = 2; // 返回状态描述
+  repeated int64 follow_list = 3; // 用户信息id列表
+}
+
+// 粉丝列表
+message RelationFansListRequest {
+  int64 user_id = 1; // 用户id
+}
+message RelationFansListResponse {
+  int32 status_code = 1; // 状态码，0-成功，其他值-失败
+  optional string status_msg = 2; // 返回状态描述
+  repeated int64 fan_list = 3; // 用户信息id列表
+}
+// 添加好友
+message RelationAddFriendRequest {
+  int64 user_id = 1; // 用户id
+  int64 to_user_id = 2; // 对方用户id
+}
+message RelationAddFriendResponse {
+  int32 status_code = 1; // 状态码，0-成功，其他值-失败
+  optional string status_msg = 2; // 返回状态描述
+}
+
+// 好友列表
+message RelationFriendListRequest {
+  int64 user_id = 1; // 用户id
+}
+message RelationFriendListResponse {
+  int32 status_code = 1; // 状态码，0-成功，其他值-失败
+  optional string status_msg = 2; // 返回状态描述
+  repeated int64 friend_list = 3; // 用户信息id列表
+}
