@@ -44,12 +44,14 @@ type ConsulServiceConfig struct {
 	Feed     ConsulServiceCommon `mapstructure:"feed"`
 	Favorite ConsulServiceCommon `mapstructure:"favorite"`
 	Comment  ConsulServiceCommon `mapstructure:"comment"`
+	Relation ConsulServiceCommon `mapstructure:"relation"`
 }
 type ConsulWebConfig struct {
 	User     ConsulWebCommon `mapstructure:"user"`
 	Feed     ConsulWebCommon `mapstructure:"feed"`
 	Favorite ConsulWebCommon `mapstructure:"favorite"`
 	Comment  ConsulWebCommon `mapstructure:"comment"`
+	Relation ConsulWebCommon `mapstructure:"relation"`
 }
 type ConsulServiceCommon struct {
 	Name string   `mapstructure:"name"`

@@ -74,3 +74,16 @@
 2023-08-09T21:00:15.697+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:62	注销user-srv服务成功: 127.0.0.1:55655
 2023-08-09T21:00:15.699+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/favorite/main.go:55	注销favorite-web服务成功
 2023-08-09T21:00:15.701+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/feed/main.go:55	注销feed-web服务成功
+2023-08-10T11:23:11.955+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/relation/main.go:58	注册relation-srv服务成功: 127.0.0.1:53402
+2023-08-10T11:23:12.392+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:52	注册user-srv服务成功: 127.0.0.1:53415
+2023-08-10T11:23:12.862+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:58	注册feed-srv服务成功: 127.0.0.1:53426
+2023-08-10T11:23:13.293+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/favorite/main.go:58	注册favorite-srv服务成功: 127.0.0.1:53444
+2023-08-10T11:23:13.729+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:39	注册user-web服务成功: 127.0.0.1:8021
+2023-08-10T11:23:14.295+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/comment/main.go:39	注册comment-web服务成功: 127.0.0.1:8024
+2023-08-10T11:23:14.750+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/feed/main.go:39	注册feed-web服务成功: 127.0.0.1:8022
+2023-08-10T11:23:15.204+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/comment/main.go:58	注册comment-srv服务成功: 127.0.0.1:53503
+2023-08-10T11:23:15.783+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/relation/main.go:39	注册relation-web服务成功: 127.0.0.1:8025
+2023-08-10T11:23:16.298+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/favorite/main.go:39	注册favorite-web服务成功: 127.0.0.1:8023
+2023-08-10T11:26:38.959+0800	error	/Users/yakult/Documents/code/GoLang/bytedanceCamp/web/middlewares/jwt.go:41	请先登录
+2023-08-10T11:27:05.963+0800	error	/Users/yakult/Documents/code/GoLang/bytedanceCamp/web/middlewares/jwt.go:41	请先登录
+2023-08-10T11:28:05.989+0800	error	/Users/yakult/Documents/code/GoLang/bytedanceCamp/web/middlewares/jwt.go:41	请先登录

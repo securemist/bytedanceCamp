@@ -58,7 +58,21 @@ type Favorite struct {
 	gorm.Model
 }
 
-type VideoData struct {
-	Data  string `json:"data"`
-	Title string `json:"title"`
+// 用户关注
+type Relation struct {
+	UserId     int64 `json:"user_id" gorm:"type:bigint;not null;index:idx_user_to_user;comment:关注者id"`
+	ToUserId   int64 `json:"to_user_id" gorm:"type:bigint;not null;index:idx_user_to_user;comment:被关注者id"`
+	IsRelation bool  `gorm:"type:bool;not null;comment:用户是否关注"`
+	User       User  `gorm:"foreignKey:UserId;references:Uuid"`
+	ToUser     User  `gorm:"foreignKey:ToUserId;references:Uuid"`
+	gorm.Model
+}
+
+// 好友关系
+type Friend struct {
+	UserId   int64 `json:"user_id" gorm:"type:bigint;not null;index:idx_user_friend;comment:用户id"`
+	FriendId int64 `json:"friend_id" gorm:"type:bigint;not null;index:idx_user_friend;comment:好友id"`
+	User     User  `gorm:"foreignKey:UserId;references:Uuid"`
+	Friend   User  `gorm:"foreignKey:FriendId;references:Uuid"`
+	gorm.Model
 }

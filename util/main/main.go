@@ -13,5 +13,5 @@ import (
 
 func main() {
 	initialize.Init()
-	global.MysqlDB.AutoMigrate(&model.Comment{}, &model.Favorite{})
+	global.MysqlDB.AutoMigrate(&model.Relation{}, &model.Friend{})
 }

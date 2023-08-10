@@ -29,6 +29,9 @@ consul-service:
   comment:
     name: "comment-srv"
     tags: ["douyin", "Yakult", "comment", "srv"]
+  relation:
+    name: "relation-srv"
+    tags: ["douyin", "Yakult", "relation", "srv"]
 
 consul-web:
   user:
@@ -47,3 +50,7 @@ consul-web:
     name: "comment-web"
     tags: ["douyin", "Yakult", "comment", "web"]
     port: 8024
+  relation:
+    name: "relation-web"
+    tags: ["douyin", "Yakult", "relation", "web"]
+    port: 8025

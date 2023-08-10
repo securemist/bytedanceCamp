@@ -10,6 +10,7 @@ import (
 	"bytedanceCamp/dao/global"
 	"bytedanceCamp/model/proto/douyin_core"
 	"bytedanceCamp/model/proto/douyin_extra_first"
+	"bytedanceCamp/model/proto/douyin_extra_second"
 	"fmt"
 	_ "github.com/mbobakov/grpc-consul-resolver" // 这行代码很重要
 	"go.uber.org/zap"
@@ -74,4 +75,18 @@ func initSrvConn() {
 		return
 	}
 	global.CommentSrvClient = douyin_extra_first.NewCommentClient(commentConn)
+	// 连接relation-srv
+	relationConn, err := grpc.Dial(
+		fmt.Sprintf("consul://%s:%d/%s?wait=14s",
+			global.ProjectConfig.Consul.Host,
+			global.ProjectConfig.Consul.Port,
+			global.ProjectConfig.ConsulService.Relation.Name),
+		grpc.WithTransportCredentials(insecure.NewCredentials()),
+		grpc.WithDefaultServiceConfig(`{"loadBalancingPolicy": "round_robin"}`),
+	)
+	if err != nil {
+		zap.S().Errorf("[InitSrvConn] 连接 [%s失败]: %s", global.ProjectConfig.ConsulService.Relation.Name, err.Error())
+		return
+	}
+	global.RelationSrvClient = douyin_extra_second.NewRelationClient(relationConn)
 }

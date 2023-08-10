@@ -4,4 +4,9 @@
 * @description:
 ********************************************************************************/
 
-package proto
+package model
+
+type VideoData struct {
+	Data  string `json:"data"`
+	Title string `json:"title"`
+}

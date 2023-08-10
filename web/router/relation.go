@@ -7,6 +7,7 @@
 package router
 
 import (
+	"bytedanceCamp/web/api"
 	"bytedanceCamp/web/middlewares"
 	"github.com/gin-gonic/gin"
 	"net/http"
@@ -20,9 +21,12 @@ func RelationRouter() *gin.Engine {
 	})
 	// 配置跨域
 	router.Use(middlewares.Cors())
-	feedRouter := router.Group("relation")
+	relationRouter := router.Group("relation").Use(middlewares.JWTAuth())
 	{
-		feedRouter.GET("")
+		relationRouter.POST("action", api.RelationAction)
+		relationRouter.GET("list", api.RelationFollowList)
+		relationRouter.GET("fans", api.RelationFanList)
+		relationRouter.GET("friend", api.RelationFriendList)
 	}
 	return router
 }

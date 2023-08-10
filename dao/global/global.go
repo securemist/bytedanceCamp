@@ -10,6 +10,7 @@ import (
 	"bytedanceCamp/config"
 	"bytedanceCamp/model/proto/douyin_core"
 	"bytedanceCamp/model/proto/douyin_extra_first"
+	"bytedanceCamp/model/proto/douyin_extra_second"
 	"gorm.io/gorm"
 )
 
@@ -20,4 +21,5 @@ var (
 	FeedSrvClient     douyin_core.FeedClient
 	FavoriteSrvClient douyin_extra_first.FavoriteClient
 	CommentSrvClient  douyin_extra_first.CommentClient
+	RelationSrvClient douyin_extra_second.RelationClient
 )
