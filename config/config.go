@@ -45,6 +45,7 @@ type ConsulServiceConfig struct {
 	Favorite ConsulServiceCommon `mapstructure:"favorite"`
 	Comment  ConsulServiceCommon `mapstructure:"comment"`
 	Relation ConsulServiceCommon `mapstructure:"relation"`
+	Message  ConsulServiceCommon `mapstructure:"message"`
 }
 type ConsulWebConfig struct {
 	User     ConsulWebCommon `mapstructure:"user"`
@@ -52,6 +53,7 @@ type ConsulWebConfig struct {
 	Favorite ConsulWebCommon `mapstructure:"favorite"`
 	Comment  ConsulWebCommon `mapstructure:"comment"`
 	Relation ConsulWebCommon `mapstructure:"relation"`
+	Message  ConsulWebCommon `mapstructure:"message"`
 }
 type ConsulServiceCommon struct {
 	Name string   `mapstructure:"name"`

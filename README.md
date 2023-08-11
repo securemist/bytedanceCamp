@@ -13,6 +13,8 @@
 
 > 本项目启动方式
 
+需要下载consul，并且启动，才能运行本项目
+
 ```bash
 // 1. 首先克隆项目 
 git clone https://github.com/YakultGo/bytedanceCamp.git

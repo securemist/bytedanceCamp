@@ -76,3 +76,13 @@ type Friend struct {
 	Friend   User  `gorm:"foreignKey:FriendId;references:Uuid"`
 	gorm.Model
 }
+
+// 消息
+type Message struct {
+	FromUserId int64  `json:"user_id" gorm:"type:bigint;not null;comment:发送用户id"`
+	ToUserId   int64  `json:"to_user_id" gorm:"type:bigint;not null;comment:接收用户id"`
+	Content    string `json:"content" gorm:"type:varchar(200);not null;comment:消息内容"`
+	FromUser   User   `gorm:"foreignKey:FromUserId;references:Uuid"`
+	ToUser     User   `gorm:"foreignKey:ToUserId;references:Uuid"`
+	gorm.Model
+}

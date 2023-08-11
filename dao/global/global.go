@@ -22,4 +22,5 @@ var (
 	FavoriteSrvClient douyin_extra_first.FavoriteClient
 	CommentSrvClient  douyin_extra_first.CommentClient
 	RelationSrvClient douyin_extra_second.RelationClient
+	MessageSrvClient  douyin_extra_second.MessageClient
 )

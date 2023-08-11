@@ -10,3 +10,8 @@ type VideoData struct {
 	Data  string `json:"data"`
 	Title string `json:"title"`
 }
+
+type MessageData struct {
+	ToUserId int64  `json:"to_user_id,omitempty"`
+	Content  string `json:"content,omitempty"`
+}
