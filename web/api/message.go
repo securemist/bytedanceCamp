@@ -15,6 +15,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
 	"net/http"
+	"strconv"
 )
 
 func MessageSend(ctx *gin.Context) {
@@ -48,18 +49,11 @@ func MessageSend(ctx *gin.Context) {
 func MessageChat(ctx *gin.Context) {
 	claims, _ := ctx.Get("claims")
 	userId := claims.(*middlewares.CustomClaims).Uuid
-	message := model.MessageData{}
-	if err := ctx.ShouldBind(&message); err != nil {
-		zap.S().Errorf("获取对方id失败: %s", err.Error())
-		ctx.JSON(http.StatusInternalServerError, gin.H{
-			"msg": err.Error(),
-		})
-		return
-	}
+	toUserId, _ := strconv.ParseInt(ctx.Query("to_user_id"), 10, 64)
 	// 我发送给对方的消息
 	res1, err := global.MessageSrvClient.MessageChat(context.Background(), &douyin_extra_second.MessageChatRequest{
 		UserId:   userId,
-		ToUserId: message.ToUserId,
+		ToUserId: toUserId,
 	})
 	if err != nil {
 		zap.S().Errorf("获取我发送给对方的消息列表失败: %s", err.Error())
@@ -70,7 +64,7 @@ func MessageChat(ctx *gin.Context) {
 	}
 	// 对方发送给我的消息
 	res2, err := global.MessageSrvClient.MessageChat(context.Background(), &douyin_extra_second.MessageChatRequest{
-		UserId:   message.ToUserId,
+		UserId:   toUserId,
 		ToUserId: userId,
 	})
 	if err != nil {
@@ -81,7 +75,7 @@ func MessageChat(ctx *gin.Context) {
 		return
 	}
 	ctx.JSON(http.StatusOK, gin.H{
-		"我发送的消息": res1.MessageList,
-		"我接收的消息": res2.MessageList,
+		"我发送给他的消息": res1.MessageList,
+		"他发送给我的消息": res2.MessageList,
 	})
 }

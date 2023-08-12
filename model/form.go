@@ -12,6 +12,6 @@ type VideoData struct {
 }
 
 type MessageData struct {
-	ToUserId int64  `json:"to_user_id,omitempty"`
-	Content  string `json:"content,omitempty"`
+	ToUserId int64  `json:"to_user_id,omitempty" form:"to_user_id"`
+	Content  string `json:"content,omitempty" form:"content"`
 }

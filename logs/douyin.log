@@ -1,29 +1,139 @@
-
-2023-08-10T19:16:55.297+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:58	注册feed-srv服务成功: 127.0.0.1:57753
-2023-08-10T19:16:55.689+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/favorite/main.go:58	注册favorite-srv服务成功: 127.0.0.1:57781
-2023-08-10T19:16:56.276+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/relation/main.go:58	注册relation-srv服务成功: 127.0.0.1:57812
-2023-08-10T19:16:56.641+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/message/main.go:58	注册message-srv服务成功: 127.0.0.1:57846
-2023-08-10T19:16:57.021+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:52	注册user-srv服务成功: 127.0.0.1:57872
-2023-08-10T19:16:57.407+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/feed/main.go:39	注册feed-web服务成功: 127.0.0.1:8022
-2023-08-10T19:16:57.412+0800	error	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/feed/main.go:44	启动失败: listen tcp 127.0.0.1:8022: bind: address already in use
-2023-08-10T19:16:57.792+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/comment/main.go:58	注册comment-srv服务成功: 127.0.0.1:57925
-2023-08-10T19:16:58.189+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/message/main.go:39	注册message-web服务成功: 127.0.0.1:8026
-2023-08-10T19:16:58.192+0800	error	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/message/main.go:44	启动失败: listen tcp 127.0.0.1:8026: bind: address already in use
-2023-08-10T19:16:58.584+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:39	注册user-web服务成功: 127.0.0.1:8021
-2023-08-10T19:16:58.587+0800	error	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:44	启动失败: listen tcp 127.0.0.1:8021: bind: address already in use
-2023-08-10T19:16:58.969+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/comment/main.go:39	注册comment-web服务成功: 127.0.0.1:8024
-2023-08-10T19:16:59.378+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/favorite/main.go:39	注册favorite-web服务成功: 127.0.0.1:8023
-2023-08-10T19:16:59.386+0800	error	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/favorite/main.go:44	启动失败: listen tcp 127.0.0.1:8023: bind: address already in use
-2023-08-10T19:16:59.782+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/relation/main.go:39	注册relation-web服务成功: 127.0.0.1:8025
-2023-08-10T19:17:49.464+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/comment/main.go:68	注销comment-srv服务成功: 127.0.0.1:57925
-2023-08-10T19:17:49.483+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:62	注销user-srv服务成功: 127.0.0.1:57872
-2023-08-10T19:17:49.501+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/comment/main.go:55	注销relation-web服务成功: 127.0.0.1:8024
-2023-08-10T19:17:49.510+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/relation/main.go:68	注销relation-srv服务成功: 127.0.0.1:57812
-2023-08-10T19:17:49.515+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/message/main.go:68	注销message-srv服务成功: 127.0.0.1:57846
-2023-08-10T19:17:49.521+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/message/main.go:55	注销relation-web服务成功: 127.0.0.1:8026
-2023-08-10T19:17:49.532+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/favorite/main.go:68	注销favorite-srv服务成功: 127.0.0.1:57781
-2023-08-10T19:17:49.542+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:55	注销relation-web服务成功: 127.0.0.1:8021
-2023-08-10T19:17:49.552+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/favorite/main.go:55	注销relation-web服务成功: 127.0.0.1:8023
-2023-08-10T19:17:49.572+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:68	注销feed-srv服务成功: 127.0.0.1:57753
-2023-08-10T19:17:49.585+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/relation/main.go:55	注销relation-web服务成功: 127.0.0.1:8025
-2023-08-10T19:17:49.607+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/feed/main.go:55	注销relation-web服务成功: 127.0.0.1:8022
+2023-08-12T15:58:07.928+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:58	注册feed-srv服务成功: 127.0.0.1:62344
+2023-08-2023-08-12T16:04:04.886+0800	error	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/favorite/main.go:66	注销favorite-srv服务失败: Unexpected response code: 404 (Unknown service ID "2332134333222912". Ensure that the service ID is passed, not the service name.)
+rite-srv服务成功: 127.0.0.1:62391
+2023-08-12T15:58:09.418+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/favorite/main.go:39	注册favorite-web服务成功: 127.0.0.1:8023
+2023-08-12T15:58:09.422+0800	error	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/favorite/main.go:44	启动失败: listen tcp 127.0.0.1:8023: bind: address already in use
+2023-08-12T15:58:09.907+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/relation/main.go:58	注册relation-srv服务成功: 127.0.0.1:62437
+2023-08-12T15:58:10.306+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/comment/main.go:58	注册comment-srv服务成功: 127.0.0.1:62472
+2023-08-12T15:58:10.794+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/feed/main.go:39	注册feed-web服务成功: 127.0.0.1:8022
+2023-08-12T15:58:10.797+0800	error	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/feed/main.go:44	启动失败: listen tcp 127.0.0.1:8022: bind: address already in use
+2023-08-12T15:58:11.158+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:52	注册user-srv服务成功: 127.0.0.1:62526
+2023-08-12T15:58:11.531+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/comment/main.go:39	注册comment-web服务成功: 127.0.0.1:8024
+2023-08-12T15:58:12.130+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/relation/main.go:39	注册relation-web服务成功: 127.0.0.1:8025
+2023-08-12T15:58:12.655+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:39	注册user-web服务成功: 127.0.0.1:8021
+2023-08-12T15:58:12.658+0800	error	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:44	启动失败: listen tcp 127.0.0.1:8021: bind: address already in use
+2023-08-12T15:58:13.164+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/message/main.go:39	注册message-web服务成功: 127.0.0.1:8026
+2023-08-12T15:58:13.166+0800	error	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/message/main.go:44	启动失败: listen tcp 127.0.0.1:8026: bind: address already in use
+2023-08-12T16:01:41.618+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/relation/main.go:55	注销relation-web服务成功: 127.0.0.1:8025
+2023-08-12T16:01:41.620+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/feed/main.go:55	注销relation-web服务成功: 127.0.0.1:8022
+2023-08-12T16:01:41.627+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/message/main.go:55	注销message-web服务成功: 127.0.0.1:8026
+2023-08-12T16:01:41.635+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:62	注销user-srv服务成功: 127.0.0.1:62526
+2023-08-12T16:01:41.637+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/favorite/main.go:55	注销relation-web服务成功: 127.0.0.1:8023
+2023-08-12T16:01:41.643+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/relation/main.go:68	注销relation-srv服务成功: 127.0.0.1:62437
+2023-08-12T16:01:41.653+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/comment/main.go:68	注销comment-srv服务成功: 127.0.0.1:62472
+2023-08-12T16:01:41.661+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/comment/main.go:55	注销relation-web服务成功: 127.0.0.1:8024
+2023-08-12T16:01:41.676+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/favorite/main.go:68	注销favorite-srv服务成功: 127.0.0.1:62391
+2023-08-12T16:01:41.690+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:68	注销feed-srv服务成功: 127.0.0.1:62344
+2023-08-12T16:01:41.691+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/message/main.go:68	注销message-srv服务成功: 127.0.0.1:62372
+2023-08-12T16:01:41.704+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:55	注销relation-web服务成功: 127.0.0.1:8021
+2023-08-12T16:01:47.790+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/message/main.go:39	注册message-web服务成功: 127.0.0.1:8026
+2023-08-12T16:01:47.793+0800	error	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/message/main.go:44	启动失败: listen tcp 127.0.0.1:8026: bind: address already in use
+2023-08-12T16:04:04.889+0800	error	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:60	注销user-srv服务失败: Unexpected response code: 404 (Unknown service ID "2332135973195776". Ensure that the service ID is passed, not the service name.)
+2023-08-12T16:04:04.888+0800	error	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:66	注销feed-srv服务失败: Unexpected response code: 404 (Unknown service ID "2332138699493376". Ensure that the service ID is passed, not the service name.)
+2023-08-12T16:04:04.887+0800	error	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/message/main.go:66	注销message-srv服务失败: Unexpected response code: 404 (Unknown service ID "2332135142723584". Ensure that the service ID is passed, not the service name.)
+2023-08-12T16:04:04.887+0800	error	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/message/main.go:53	注销message-web服务失败: Unexpected response code: 404 (Unknown service ID "2332139571908608". Ensure that the service ID is passed, not the service name.)
+2023-08-12T16:04:04.901+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/message/main.go:55	注销message-web服务成功
+2023-08-12T16:04:04.888+0800	error	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/comment/main.go:66	注销comment-srv服务失败: Unexpected response code: 404 (Unknown service ID "2332136984023040". Ensure that the service ID is passed, not the service name.)
+2023-08-12T16:04:04.890+0800	error	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/relation/main.go:66	注销relation-srv服务失败: Unexpected response code: 404 (Unknown service ID "2332137789329408". Ensure that the service ID is passed, not the service name.)
+2023-08-12T16:08:51.046+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/favorite/main.go:58	注册favorite-srv服务成功: 127.0.0.1:50448
+2023-08-12T16:08:51.326+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/message/main.go:58	注册message-srv服务成功: 127.0.0.1:50461
+2023-08-12T16:08:51.707+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/relation/main.go:58	注册relation-srv服务成功: 127.0.0.1:50474
+2023-08-12T16:08:52.230+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:52	注册user-srv服务成功: 127.0.0.1:50491
+2023-08-12T16:08:52.611+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/favorite/main.go:39	注册favorite-web服务成功: 127.0.0.1:8023
+2023-08-12T16:08:52.981+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/comment/main.go:39	注册comment-web服务成功: 127.0.0.1:8024
+2023-08-12T16:08:53.352+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:58	注册feed-srv服务成功: 127.0.0.1:50561
+2023-08-12T16:08:53.725+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/comment/main.go:58	注册comment-srv服务成功: 127.0.0.1:50588
+2023-08-12T16:08:54.094+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/message/main.go:39	注册message-web服务成功: 127.0.0.1:8026
+2023-08-12T16:08:54.477+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/relation/main.go:39	注册relation-web服务成功: 127.0.0.1:8025
+2023-08-12T16:08:54.846+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/feed/main.go:39	注册feed-web服务成功: 127.0.0.1:8022
+2023-08-12T16:08:55.212+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:39	注册user-web服务成功: 127.0.0.1:8021
+2023-08-12T16:09:06.407+0800	error	/Users/yakult/Documents/code/GoLang/bytedanceCamp/service/message.go:47	消息记录查询失败: Error 1146 (42S02): Table 'camp.message' doesn't exist
+2023-08-12T16:09:06.407+0800	error	/Users/yakult/Documents/code/GoLang/bytedanceCamp/web/api/message.go:65	获取我发送给对方的消息列表失败: rpc error: code = Internal desc = 消息记录查询失败: Error 1146 (42S02): Table 'camp.message' doesn't exist
+2023-08-12T16:09:09.523+0800	error	/Users/yakult/Documents/code/GoLang/bytedanceCamp/service/message.go:33	消息发送失败: Error 1146 (42S02): Table 'camp.message' doesn't exist
+2023-08-12T16:09:09.524+0800	error	/Users/yakult/Documents/code/GoLang/bytedanceCamp/web/api/message.go:37	消息发送失败: rpc error: code = Internal desc = 消息发送失败: Error 1146 (42S02): Table 'camp.message' doesn't exist
+2023-08-12T16:09:12.506+0800	error	/Users/yakult/Documents/code/GoLang/bytedanceCamp/service/message.go:33	消息发送失败: Error 1146 (42S02): Table 'camp.message' doesn't exist
+2023-08-12T16:09:12.506+0800	error	/Users/yakult/Documents/code/GoLang/bytedanceCamp/web/api/message.go:37	消息发送失败: rpc error: code = Internal desc = 消息发送失败: Error 1146 (42S02): Table 'camp.message' doesn't exist
+2023-08-12T16:10:39.697+0800	error	/Users/yakult/Documents/code/GoLang/bytedanceCamp/service/message.go:33	消息发送失败: Error 1146 (42S02): Table 'camp.message' doesn't exist
+2023-08-12T16:10:39.698+0800	error	/Users/yakult/Documents/code/GoLang/bytedanceCamp/web/api/message.go:37	消息发送失败: rpc error: code = Internal desc = 消息发送失败: Error 1146 (42S02): Table 'camp.message' doesn't exist
+2023-08-12T16:13:57.383+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/message/main.go:55	注销message-web服务成功: 127.0.0.1:8026
+2023-08-12T16:13:57.392+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:68	注销feed-srv服务成功: 127.0.0.1:50561
+2023-08-12T16:13:57.394+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/comment/main.go:55	注销relation-web服务成功: 127.0.0.1:8024
+2023-08-12T16:13:57.397+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/relation/main.go:55	注销relation-web服务成功: 127.0.0.1:8025
+2023-08-12T16:13:57.401+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/message/main.go:68	注销message-srv服务成功: 127.0.0.1:50461
+2023-08-12T16:13:57.407+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/comment/main.go:68	注销comment-srv服务成功: 127.0.0.1:50588
+2023-08-12T16:13:57.412+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/favorite/main.go:68	注销favorite-srv服务成功: 127.0.0.1:50448
+2023-08-12T16:13:57.414+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:55	注销relation-web服务成功: 127.0.0.1:8021
+2023-08-12T16:13:57.418+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:62	注销user-srv服务成功: 127.0.0.1:50491
+2023-08-12T16:13:57.422+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/relation/main.go:68	注销relation-srv服务成功: 127.0.0.1:50474
+2023-08-12T16:13:57.428+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/feed/main.go:55	注销relation-web服务成功: 127.0.0.1:8022
+2023-08-12T16:13:57.432+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/favorite/main.go:55	注销relation-web服务成功: 127.0.0.1:8023
+2023-08-12T16:14:17.830+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/comment/main.go:58	注册comment-srv服务成功: 127.0.0.1:51885
+2023-08-12T16:14:18.185+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:58	注册feed-srv服务成功: 127.0.0.1:51895
+2023-08-12T16:14:18.579+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:52	注册user-srv服务成功: 127.0.0.1:51914
+2023-08-12T16:14:18.948+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/message/main.go:58	注册message-srv服务成功: 127.0.0.1:51930
+2023-08-12T16:14:19.341+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/relation/main.go:58	注册relation-srv服务成功: 127.0.0.1:51952
+2023-08-12T16:14:19.716+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/favorite/main.go:58	注册favorite-srv服务成功: 127.0.0.1:51978
+2023-08-12T16:14:20.106+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/relation/main.go:39	注册relation-web服务成功: 127.0.0.1:8025
+2023-08-12T16:14:20.525+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/favorite/main.go:39	注册favorite-web服务成功: 127.0.0.1:8023
+2023-08-12T16:14:20.918+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/feed/main.go:39	注册feed-web服务成功: 127.0.0.1:8022
+2023-08-12T16:14:21.298+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/message/main.go:39	注册message-web服务成功: 127.0.0.1:8026
+2023-08-12T16:14:21.730+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/comment/main.go:39	注册comment-web服务成功: 127.0.0.1:8024
+2023-08-12T16:14:22.119+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:39	注册user-web服务成功: 127.0.0.1:8021
+2023-08-12T16:15:44.096+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:55	注销relation-web服务成功: 127.0.0.1:8021
+2023-08-12T16:15:44.101+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/message/main.go:55	注销message-web服务成功: 127.0.0.1:8026
+2023-08-12T16:15:44.107+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/comment/main.go:68	注销comment-srv服务成功: 127.0.0.1:51885
+2023-08-12T16:15:44.111+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:62	注销user-srv服务成功: 127.0.0.1:51914
+2023-08-12T16:15:44.117+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/comment/main.go:55	注销relation-web服务成功: 127.0.0.1:8024
+2023-08-12T16:15:44.120+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/relation/main.go:68	注销relation-srv服务成功: 127.0.0.1:51952
+2023-08-12T16:15:44.128+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/message/main.go:68	注销message-srv服务成功: 127.0.0.1:51930
+2023-08-12T16:15:44.133+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/favorite/main.go:68	注销favorite-srv服务成功: 127.0.0.1:51978
+2023-08-12T16:15:44.136+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/favorite/main.go:55	注销relation-web服务成功: 127.0.0.1:8023
+2023-08-12T16:15:44.139+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/relation/main.go:55	注销relation-web服务成功: 127.0.0.1:8025
+2023-08-12T16:15:44.142+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/feed/main.go:55	注销relation-web服务成功: 127.0.0.1:8022
+2023-08-12T16:15:44.145+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:68	注销feed-srv服务成功: 127.0.0.1:51895
+2023-08-12T16:16:07.926+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/message/main.go:58	注册message-srv服务成功: 127.0.0.1:52403
+2023-08-12T16:16:08.191+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/message/main.go:39	注册message-web服务成功: 127.0.0.1:8026
+2023-08-12T16:21:00.567+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/message/main.go:55	注销message-web服务成功: 127.0.0.1:8026
+2023-08-12T16:21:06.702+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/message/main.go:39	注册message-web服务成功: 127.0.0.1:8026
+2023-08-12T16:21:10.537+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/web/api/message.go:59	userId: 1533847262990336, toUserId: 0
+2023-08-12T16:22:34.939+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/message/main.go:55	注销message-web服务成功: 127.0.0.1:8026
+2023-08-12T16:22:48.646+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/message/main.go:39	注册message-web服务成功: 127.0.0.1:8026
+2023-08-12T16:22:51.159+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/web/api/message.go:59	userId: 1533847262990336, toUserId: 2225747380932608
+2023-08-12T16:22:55.868+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/web/api/message.go:59	userId: 1533847262990336, toUserId: 2225747380932608
+2023-08-12T16:23:04.987+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/message/main.go:55	注销message-web服务成功: 127.0.0.1:8026
+2023-08-12T16:23:11.618+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/message/main.go:39	注册message-web服务成功: 127.0.0.1:8026
+2023-08-12T16:23:20.352+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/web/api/message.go:59	userId: 1533847262990336, toUserId: 0
+2023-08-12T16:24:50.025+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/message/main.go:55	注销message-web服务成功: 127.0.0.1:8026
+2023-08-12T16:24:54.129+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/message/main.go:39	注册message-web服务成功: 127.0.0.1:8026
+2023-08-12T16:25:00.594+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/web/api/message.go:59	userId: 1533847262990336, toUserId: 0
+2023-08-12T16:25:01.321+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/web/api/message.go:59	userId: 1533847262990336, toUserId: 0
+2023-08-12T16:25:02.123+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/web/api/message.go:59	userId: 1533847262990336, toUserId: 0
+2023-08-12T16:25:14.194+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/web/api/message.go:59	userId: 1533847262990336, toUserId: 2225747380932608
+2023-08-12T16:26:34.420+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/web/api/message.go:59	userId: 1533847262990336, toUserId: 0
+2023-08-12T16:26:41.520+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/web/api/message.go:59	userId: 1533847262990336, toUserId: 2225747380932608
+2023-08-12T16:32:19.351+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/message/main.go:55	注销message-web服务成功: 127.0.0.1:8026
+2023-08-12T16:32:20.685+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/message/main.go:68	注销message-srv服务成功: 127.0.0.1:52403
+2023-08-12T16:42:20.298+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:58	注册feed-srv服务成功: 127.0.0.1:54727
+2023-08-12T16:42:20.673+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/favorite/main.go:58	注册favorite-srv服务成功: 127.0.0.1:54740
+2023-08-12T16:42:21.139+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/message/main.go:58	注册message-srv服务成功: 127.0.0.1:54755
+2023-08-12T16:42:22.164+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/comment/main.go:58	注册comment-srv服务成功: 127.0.0.1:54778
+2023-08-12T16:42:22.550+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:52	注册user-srv服务成功: 127.0.0.1:54799
+2023-08-12T16:42:22.942+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/relation/main.go:58	注册relation-srv服务成功: 127.0.0.1:54823
+2023-08-12T16:42:23.329+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/message/main.go:39	注册message-web服务成功: 127.0.0.1:8026
+2023-08-12T16:42:23.785+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/comment/main.go:39	注册comment-web服务成功: 127.0.0.1:8024
+2023-08-12T16:42:24.165+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/relation/main.go:39	注册relation-web服务成功: 127.0.0.1:8025
+2023-08-12T16:42:24.554+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/favorite/main.go:39	注册favorite-web服务成功: 127.0.0.1:8023
+2023-08-12T16:42:24.935+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:39	注册user-web服务成功: 127.0.0.1:8021
+2023-08-12T16:42:25.308+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/feed/main.go:39	注册feed-web服务成功: 127.0.0.1:8022
+2023-08-12T16:42:35.552+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/feed/main.go:68	注销feed-srv服务成功: 127.0.0.1:54727
+2023-08-12T16:42:35.557+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/user/main.go:62	注销user-srv服务成功: 127.0.0.1:54799
+2023-08-12T16:42:35.561+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/feed/main.go:55	注销relation-web服务成功: 127.0.0.1:8022
+2023-08-12T16:42:35.565+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/relation/main.go:68	注销relation-srv服务成功: 127.0.0.1:54823
+2023-08-12T16:42:35.567+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/message/main.go:55	注销message-web服务成功: 127.0.0.1:8026
+2023-08-12T16:42:35.572+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/favorite/main.go:68	注销favorite-srv服务成功: 127.0.0.1:54740
+2023-08-12T16:42:35.574+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/comment/main.go:55	注销relation-web服务成功: 127.0.0.1:8024
+2023-08-12T16:42:35.577+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/relation/main.go:55	注销relation-web服务成功: 127.0.0.1:8025
+2023-08-12T16:42:35.582+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/user/main.go:55	注销relation-web服务成功: 127.0.0.1:8021
+2023-08-12T16:42:35.586+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/message/main.go:68	注销message-srv服务成功: 127.0.0.1:54755
+2023-08-12T16:42:35.589+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/web/favorite/main.go:55	注销relation-web服务成功: 127.0.0.1:8023
+2023-08-12T16:42:35.592+0800	info	/Users/yakult/Documents/code/GoLang/bytedanceCamp/cmd/service/comment/main.go:68	注销comment-srv服务成功: 127.0.0.1:54778

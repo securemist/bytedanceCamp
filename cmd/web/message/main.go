@@ -40,7 +40,7 @@ func main() {
 	}
 	// 4. 启动服务
 	go func() {
-		if err := routers.Run(fmt.Sprintf("localhost:%d", global.ProjectConfig.ConsulWeb.Message.Port)); err != nil {
+		if err = routers.Run(fmt.Sprintf("localhost:%d", global.ProjectConfig.ConsulWeb.Message.Port)); err != nil {
 			zap.S().Errorf("启动失败: %s", err.Error())
 		}
 	}()
@@ -52,5 +52,5 @@ func main() {
 	if err != nil {
 		zap.S().Errorf("注销%s服务失败: %s", global.ProjectConfig.ConsulWeb.Message.Name, err.Error())
 	}
-	zap.S().Infof("注销%s服务成功: %s:%d", global.ProjectConfig.ConsulWeb.Relation.Name, "127.0.0.1", global.ProjectConfig.ConsulWeb.Message.Port)
+	zap.S().Infof("注销%s服务成功: %s:%d", global.ProjectConfig.ConsulWeb.Message.Name, "127.0.0.1", global.ProjectConfig.ConsulWeb.Message.Port)
 }

@@ -21,9 +21,10 @@ func MessageRouter() *gin.Engine {
 	})
 	// 配置跨域
 	router.Use(middlewares.Cors())
-	relationRouter := router.Group("message").Use(middlewares.JWTAuth())
+	messageRouter := router.Group("message").Use(middlewares.JWTAuth())
 	{
-		relationRouter.POST("send", api.MessageSend)
+		messageRouter.POST("send", api.MessageSend)
+		messageRouter.GET("chat", api.MessageChat)
 	}
 	return router
 }
